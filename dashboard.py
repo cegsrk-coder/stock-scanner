@@ -19,6 +19,34 @@ st.set_page_config(
 
 SCANS_DIR = Path(__file__).parent / "data" / "scans"
 
+
+def _tradingview_chart(symbol: str, height: int = 500):
+    """Render TradingView advanced chart widget for an NSE stock."""
+    tv_symbol = f"NSE:{symbol}"
+    html = f"""
+    <div id="tv-chart-container" style="height: {height}px;">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+        {{
+            "autosize": true,
+            "symbol": "{tv_symbol}",
+            "interval": "D",
+            "timezone": "Asia/Kolkata",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "hide_side_toolbar": false,
+            "allow_symbol_change": true,
+            "support_host": "https://www.tradingview.com",
+            "height": "{height}",
+            "width": "100%",
+            "studies": ["STD;SMA"],
+            "show_popup_button": true
+        }}
+        </script>
+    </div>
+    """
+    st.components.v1.html(html, height=height + 10)
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -159,11 +187,25 @@ def _style_table(df: pd.DataFrame):
 
 
 def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = ""):
-    """Render a styled, sortable stock table."""
+    """Render a styled, sortable stock table with clickable symbols."""
     df = _build_df(stocks, extra_cols)
     if df.empty:
         st.info("No stocks in this category.")
         return
+
+    # Stock selector for chart
+    symbols = [s.get("symbol", "") for s in stocks]
+    selected = st.selectbox(
+        "Select stock to view chart",
+        [""] + symbols,
+        index=0,
+        key=f"select_{key}",
+        format_func=lambda x: "Click to view chart..." if x == "" else x,
+    )
+
+    if selected:
+        _tradingview_chart(selected)
+
     st.dataframe(
         _style_table(df),
         width="stretch",
