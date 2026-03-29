@@ -18,6 +18,114 @@ st.set_page_config(
 )
 
 SCANS_DIR = Path(__file__).parent / "data" / "scans"
+PROJECT_DIR = Path(__file__).parent
+
+
+import sys
+
+# Ensure project root is on path so scanner imports work
+_project_root = str(PROJECT_DIR)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def _live_scan_stock(symbol: str) -> dict | None:
+    """Run a live scan for a single stock. Cached for 5 min."""
+    from scanner import scan_stock
+    from config.stocks import ALL_STOCKS
+    from nifty500 import get_nifty500_list
+
+    symbol = symbol.upper().strip()
+    stock_info = ALL_STOCKS.get(symbol)
+    if not stock_info:
+        nifty500 = get_nifty500_list()
+        stock_info = nifty500.get(symbol)
+    if not stock_info:
+        return None
+    return scan_stock(symbol, stock_info)
+
+
+@st.cache_data(ttl=300, show_spinner=False)
+def _live_scan_nifty50() -> dict:
+    """Run live scan on Nifty 50 + Bank Nifty. Cached for 5 min."""
+    from scanner import run_full_scan
+    from config.stocks import ALL_STOCKS
+    return run_full_scan(stock_universe=ALL_STOCKS)
+
+
+def _format_live_result(r: dict):
+    """Render a single stock live scan result as a rich card."""
+    sym = r["symbol"]
+    tv_url = _tradingview_link(sym)
+    chg = r["day_change_pct"]
+    chg_color = "#2ecc71" if chg >= 0 else "#e74c3c"
+
+    st.markdown(f"### [{sym}]({tv_url}) — {r['name']}")
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.metric("Price", f"\u20B9{r['current_price']:,.1f}", f"{chg:+.1f}%")
+    with c2:
+        st.metric("52W Range", f"\u20B9{r['week_52_low']:,.0f} - {r['week_52_high']:,.0f}")
+    with c3:
+        dma = r.get("dma_200")
+        if dma:
+            pos = "ABOVE" if r.get("is_above_200dma") else "BELOW"
+            st.metric("200 DMA", f"\u20B9{dma:,.0f}", pos, delta_color="normal" if r.get("is_above_200dma") else "inverse")
+
+    # Support zones
+    if r.get("near_support"):
+        z = r["near_support"][0]
+        rr = r.get("risk_reward") or {}
+        bt = z.get("backtest") or {}
+        vol = r.get("vol_signal") or "—"
+        del_pct = r.get("delivery_pct")
+        conf = r.get("confidence") or "—"
+
+        conf_color = {"HIGH": "#2ecc71", "MEDIUM": "#f39c12", "LOW": "#e74c3c"}.get(conf, "#aaa")
+
+        st.markdown(f"""
+**NEAR SUPPORT** — {z['distance_pct']:.1f}% away from \u20B9{z['low']:,.0f}-{z['high']:,.0f} (Score: {z['score']}, {z['touches']}x touched)
+
+| SL | Target | R:R | Vol | Del% | Conf | Win Rate |
+|---|---|---|---|---|---|---|
+| \u20B9{rr.get('stop_loss', 0):,.0f} | \u20B9{rr.get('target', 0):,.0f} | **{rr.get('rr_ratio', 0)}:1** | {vol} | {f"{del_pct}%" if del_pct else "—"} | **<span style="color:{conf_color}">{conf}</span>** | {f"{bt['win_rate']:.0f}% ({bt['wins']}/{bt['total']})" if bt.get('total') else "—"} |
+""", unsafe_allow_html=True)
+
+    elif r.get("near_resistance"):
+        z = r["near_resistance"][0]
+        st.markdown(f"**NEAR RESISTANCE** — {z['distance_pct']:.1f}% away from \u20B9{z['low']:,.0f}-{z['high']:,.0f} (Score: {z['score']})")
+
+    elif r.get("broken_below_support"):
+        st.markdown(f"**BROKEN BELOW SUPPORT** — {r['below_support_pct']}% below lowest support")
+
+    else:
+        st.info("No actionable signal — price is between support and resistance.")
+
+    # Fundamentals
+    f = r.get("fundamentals") or {}
+    v = r.get("fund_verdict", "—")
+    if f:
+        vc = {"STRONG": "#2ecc71", "OK": "#f39c12", "WEAK": "#e74c3c"}.get(v, "#aaa")
+        pe = f.get("pe", "—")
+        roe = f.get("roe", "—")
+        de = f.get("de", "—")
+        st.markdown(f"**Fundamentals:** P/E: {pe} | ROE: {roe} | D/E: {de} | Verdict: <span style='color:{vc};font-weight:bold'>{v}</span>", unsafe_allow_html=True)
+
+    # All support/resistance zones
+    with st.expander("All Support & Resistance Zones"):
+        zc1, zc2 = st.columns(2)
+        with zc1:
+            st.markdown("**Support Zones**")
+            for z in r.get("all_support_zones", []):
+                stars = "\u2B50" * int(z["score"])
+                st.markdown(f"\u20B9{z['low']:,.0f}-{z['high']:,.0f} | {stars} | {z['touches']}x")
+        with zc2:
+            st.markdown("**Resistance Zones**")
+            for z in r.get("all_resistance_zones", []):
+                stars = "\u2B50" * int(z["score"])
+                st.markdown(f"\u20B9{z['low']:,.0f}-{z['high']:,.0f} | {stars} | {z['touches']}x")
 
 
 def _tradingview_link(symbol: str) -> str:
@@ -135,6 +243,32 @@ def _color_change(v) -> str:
     return "color: #2ecc71" if v >= 0 else "color: #e74c3c"
 
 
+_SECTOR_SHORT = {
+    "Automobile and Auto Components": "Auto",
+    "Financial Services": "Fin Svc",
+    "Information Technology": "IT",
+    "Fast Moving Consumer Goods": "FMCG",
+    "Construction Materials": "Materials",
+    "Consumer Services": "Consumer",
+    "Capital Goods": "Cap Goods",
+    "Oil Gas & Consumable Fuels": "Oil & Gas",
+    "Consumer Durables": "Durables",
+    "Telecommunication": "Telecom",
+    "Healthcare": "Health",
+    "Textiles": "Textiles",
+    "Forest Materials": "Forest",
+    "Diversified": "Diverse",
+    "Media Entertainment & Publication": "Media",
+    "Realty": "Realty",
+    "Services": "Services",
+    "Power": "Power",
+}
+
+
+def _short_sector(sector: str) -> str:
+    return _SECTOR_SHORT.get(sector, sector)
+
+
 def _build_df(stocks: list, extra_cols: list[str] | None = None, mode: str = "buy") -> pd.DataFrame:
     """Build a display DataFrame from a list of stock dicts.
 
@@ -154,7 +288,7 @@ def _build_df(stocks: list, extra_cols: list[str] | None = None, mode: str = "bu
             "Symbol": tv_url,
             "Price": s.get("current_price"),
             "Day Chg%": s.get("day_change_pct"),
-            "Sector": s.get("sector", ""),
+            "Sector": _short_sector(s.get("sector", "")),
         }
 
         if mode == "buy":
@@ -425,6 +559,66 @@ sector_strength = scan.get("sector_strength", {})
 # ---------------------------------------------------------------------------
 
 st.title("\U0001F4C8 Stock Level Scanner")
+
+# ---------------------------------------------------------------------------
+# Live Scan Section
+# ---------------------------------------------------------------------------
+with st.expander("**Live Scan** — Real-time market analysis", expanded=False):
+    live_tab_single, live_tab_nifty = st.tabs(["Quick Stock Scan", "Scan Nifty 50"])
+
+    with live_tab_single:
+        col_input, col_btn = st.columns([3, 1])
+        with col_input:
+            live_symbol = st.text_input(
+                "Enter stock symbol",
+                placeholder="e.g. MARUTI, TCS, RELIANCE",
+                key="live_symbol",
+                label_visibility="collapsed",
+            )
+        with col_btn:
+            scan_clicked = st.button("Scan", type="primary", key="btn_single")
+
+        if scan_clicked and live_symbol:
+            with st.spinner(f"Scanning {live_symbol.upper()}..."):
+                result = _live_scan_stock(live_symbol)
+            if result:
+                _format_live_result(result)
+            else:
+                st.error(f"**{live_symbol.upper()}** not found in Nifty 50 or Nifty 500.")
+        elif scan_clicked:
+            st.warning("Enter a stock symbol first.")
+
+    with live_tab_nifty:
+        st.caption("Scans all 60 Nifty 50 + Bank Nifty stocks. Takes ~3-5 minutes.")
+        if st.button("Scan Nifty 50 Now", type="primary", key="btn_nifty50"):
+            progress = st.progress(0, text="Starting scan...")
+            with st.spinner("Running live scan..."):
+                live_results = _live_scan_nifty50()
+            progress.progress(100, text="Scan complete!")
+
+            if live_results:
+                live_buy = live_results.get("near_support", [])
+                live_profit = live_results.get("near_resistance", [])
+                live_deep = live_results.get("deep_value", [])
+
+                lm1, lm2, lm3 = st.columns(3)
+                lm1.metric("Buy Zone", len(live_buy))
+                lm2.metric("Profit Zone", len(live_profit))
+                lm3.metric("Deep Value", len(live_deep))
+
+                if live_buy:
+                    st.subheader("Live Buy Zone")
+                    # Convert scanner results to serialized format for _build_df
+                    from export_json import _serialize_stock
+                    live_buy_serialized = [_serialize_stock(s) for s in live_buy]
+                    _render_table(live_buy_serialized, key="live_buy")
+
+                if live_profit:
+                    st.subheader("Live Profit Zone")
+                    live_profit_serialized = [_serialize_stock(s) for s in live_profit]
+                    _render_table(live_profit_serialized, key="live_profit", mode="profit")
+
+st.divider()
 st.caption(f"Daily Scan Report \u2014 {scan.get('scan_date', selected_date)}")
 
 # --- Header metrics ---
