@@ -1,0 +1,8 @@
+py5paisa
+pandas
+numpy
+tabulate
+schedule
+yfinance
+pyarrow
+streamlit

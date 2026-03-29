@@ -1,0 +1,17 @@
+[
+  {
+    "symbol": "MARUTI",
+    "qty": 10,
+    "avg_price": 12800
+  },
+  {
+    "symbol": "HDFCBANK",
+    "qty": 50,
+    "avg_price": 1650
+  },
+  {
+    "symbol": "RELIANCE",
+    "qty": 30,
+    "avg_price": 1400
+  }
+]

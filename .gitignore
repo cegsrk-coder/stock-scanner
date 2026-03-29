@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+data/cache/
+data/fundamentals_cache.json
+data/nifty500_list.json
+reports/
+.env
+!data/scans/
