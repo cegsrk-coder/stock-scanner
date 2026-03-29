@@ -20,18 +20,47 @@ st.set_page_config(
 SCANS_DIR = Path(__file__).parent / "data" / "scans"
 
 
-def _tradingview_chart(symbol: str, height: int = 500):
-    """Render TradingView chart via iframe for an NSE stock."""
-    tv_symbol = f"NSE%3A{symbol}"
-    url = (
-        f"https://s.tradingview.com/widgetembed/?hideideas=1&overrides=%7B%7D"
-        f"&enabled_features=%5B%5D&disabled_features=%5B%5D"
-        f"&locale=en&utm_source=www.tradingview.com"
-        f"&symbol={tv_symbol}&interval=D&theme=dark"
-        f"&style=1&timezone=Asia%2FKolkata&studies=%5B%5D"
-        f"&withdateranges=1&showpopupbutton=1"
-    )
-    st.components.v1.iframe(url, height=height, scrolling=False)
+def _tradingview_link(symbol: str) -> str:
+    """Return TradingView URL for an NSE stock."""
+    return f"https://www.tradingview.com/chart/?symbol=NSE%3A{symbol}"
+
+
+def _stock_detail_card(stock: dict):
+    """Show stock details + TradingView link when a row is selected."""
+    sym = stock.get("symbol", "")
+    zone = stock.get("zone") or {}
+    fund = stock.get("fundamentals") or {}
+
+    tv_url = _tradingview_link(sym)
+
+    col1, col2, col3 = st.columns([3, 3, 2])
+    with col1:
+        st.markdown(f"### {sym}")
+        st.markdown(f"**{stock.get('name', '')}** | {stock.get('sector', '')}")
+        price = stock.get("current_price", 0)
+        chg = stock.get("day_change_pct", 0)
+        chg_color = "#2ecc71" if chg >= 0 else "#e74c3c"
+        st.markdown(
+            f"Price: **\u20B9{price:,.1f}** "
+            f'<span style="color:{chg_color}">({chg:+.1f}%)</span>',
+            unsafe_allow_html=True,
+        )
+
+    with col2:
+        if zone:
+            st.markdown(f"**Zone:** \u20B9{zone.get('low', 0):,.0f} - \u20B9{zone.get('high', 0):,.0f}")
+            st.markdown(f"**Touches:** {zone.get('touches', 0)}x | **Distance:** {zone.get('distance_pct', 0):.1f}%")
+        pe = fund.get("pe", "-")
+        roe = fund.get("roe", "-")
+        de = fund.get("de", "-")
+        st.markdown(f"**P/E:** {pe} | **ROE:** {roe} | **D/E:** {de}")
+
+    with col3:
+        verdict = stock.get("fund_verdict", "")
+        vc = {"STRONG": "#2ecc71", "OK": "#f39c12", "WEAK": "#e74c3c"}.get(verdict, "#aaa")
+        st.markdown(f'<span style="color:{vc}; font-size:1.5em; font-weight:bold">{verdict}</span>', unsafe_allow_html=True)
+        st.markdown(f"[Open TradingView Chart \u2197]({tv_url})")
+        st.markdown(f"52W: \u20B9{stock.get('week_52_low', 0):,.0f} - \u20B9{stock.get('week_52_high', 0):,.0f}")
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -191,13 +220,16 @@ def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = 
         key=f"df_{key}",
     )
 
-    # Show chart when a row is clicked
+    # Show stock detail card when a row is clicked
     selected_rows = event.selection.rows if event.selection else []
     if selected_rows:
         idx = selected_rows[0]
+        # Find the matching stock dict
         symbol = df.iloc[idx]["Symbol"]
-        st.subheader(f"{symbol} — TradingView Chart")
-        _tradingview_chart(symbol)
+        stock = next((s for s in stocks if s.get("symbol") == symbol), None)
+        if stock:
+            st.divider()
+            _stock_detail_card(stock)
 
 
 def _filter_stocks(stocks: list, sectors: list[str], verdicts: list[str]) -> list:
