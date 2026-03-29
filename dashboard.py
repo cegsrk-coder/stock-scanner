@@ -127,8 +127,9 @@ def _build_df(stocks: list, extra_cols: list[str] | None = None) -> pd.DataFrame
         fund = s.get("fundamentals") or {}
         zone_str = f"{int(zone['low'])}-{int(zone['high'])}" if zone.get("low") else "-"
         sym = s.get("symbol", "")
+        tv_url = _tradingview_link(sym)
         row = {
-            "Symbol": sym,
+            "Symbol": tv_url,
             "Price": s.get("current_price"),
             "Day Chg%": s.get("day_change_pct"),
             "Sector": s.get("sector", ""),
@@ -209,7 +210,7 @@ def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = 
         st.info("No stocks in this category.")
         return
 
-    # Table with row selection
+    # Table with row selection and clickable Symbol links
     event = st.dataframe(
         _style_table(df),
         width="stretch",
@@ -218,15 +219,20 @@ def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = 
         on_select="rerun",
         selection_mode="single-row",
         key=f"df_{key}",
+        column_config={
+            "Symbol": st.column_config.LinkColumn(
+                "Symbol",
+                display_text=r"NSE%3A(.+?)$",
+            ),
+        },
     )
 
     # Show stock detail card when a row is clicked
     selected_rows = event.selection.rows if event.selection else []
     if selected_rows:
         idx = selected_rows[0]
-        # Find the matching stock dict
-        symbol = df.iloc[idx]["Symbol"]
-        stock = next((s for s in stocks if s.get("symbol") == symbol), None)
+        # Symbol column has the URL — match by index
+        stock = stocks[idx] if idx < len(stocks) else None
         if stock:
             st.divider()
             _stock_detail_card(stock)
