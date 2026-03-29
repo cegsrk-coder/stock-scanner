@@ -21,31 +21,17 @@ SCANS_DIR = Path(__file__).parent / "data" / "scans"
 
 
 def _tradingview_chart(symbol: str, height: int = 500):
-    """Render TradingView advanced chart widget for an NSE stock."""
-    tv_symbol = f"NSE:{symbol}"
-    html = f"""
-    <div id="tv-chart-container" style="height: {height}px;">
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-        {{
-            "autosize": true,
-            "symbol": "{tv_symbol}",
-            "interval": "D",
-            "timezone": "Asia/Kolkata",
-            "theme": "dark",
-            "style": "1",
-            "locale": "en",
-            "hide_side_toolbar": false,
-            "allow_symbol_change": true,
-            "support_host": "https://www.tradingview.com",
-            "height": "{height}",
-            "width": "100%",
-            "studies": ["STD;SMA"],
-            "show_popup_button": true
-        }}
-        </script>
-    </div>
-    """
-    st.components.v1.html(html, height=height + 10)
+    """Render TradingView chart via iframe for an NSE stock."""
+    tv_symbol = f"NSE%3A{symbol}"
+    url = (
+        f"https://s.tradingview.com/widgetembed/?hideideas=1&overrides=%7B%7D"
+        f"&enabled_features=%5B%5D&disabled_features=%5B%5D"
+        f"&locale=en&utm_source=www.tradingview.com"
+        f"&symbol={tv_symbol}&interval=D&theme=dark"
+        f"&style=1&timezone=Asia%2FKolkata&studies=%5B%5D"
+        f"&withdateranges=1&showpopupbutton=1"
+    )
+    st.components.v1.iframe(url, height=height, scrolling=False)
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -111,8 +97,9 @@ def _build_df(stocks: list, extra_cols: list[str] | None = None) -> pd.DataFrame
         zone = s.get("zone") or {}
         fund = s.get("fundamentals") or {}
         zone_str = f"{int(zone['low'])}-{int(zone['high'])}" if zone.get("low") else "-"
+        sym = s.get("symbol", "")
         row = {
-            "Symbol": s.get("symbol", ""),
+            "Symbol": sym,
             "Price": s.get("current_price"),
             "Day Chg%": s.get("day_change_pct"),
             "Sector": s.get("sector", ""),
@@ -193,25 +180,24 @@ def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = 
         st.info("No stocks in this category.")
         return
 
-    # Stock selector for chart
-    symbols = [s.get("symbol", "") for s in stocks]
-    selected = st.selectbox(
-        "Select stock to view chart",
-        [""] + symbols,
-        index=0,
-        key=f"select_{key}",
-        format_func=lambda x: "Click to view chart..." if x == "" else x,
-    )
-
-    if selected:
-        _tradingview_chart(selected)
-
-    st.dataframe(
+    # Table with row selection
+    event = st.dataframe(
         _style_table(df),
         width="stretch",
         hide_index=True,
         height=min(35 * len(df) + 50, 600),
+        on_select="rerun",
+        selection_mode="single-row",
+        key=f"df_{key}",
     )
+
+    # Show chart when a row is clicked
+    selected_rows = event.selection.rows if event.selection else []
+    if selected_rows:
+        idx = selected_rows[0]
+        symbol = df.iloc[idx]["Symbol"]
+        st.subheader(f"{symbol} — TradingView Chart")
+        _tradingview_chart(symbol)
 
 
 def _filter_stocks(stocks: list, sectors: list[str], verdicts: list[str]) -> list:
