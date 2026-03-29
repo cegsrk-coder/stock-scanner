@@ -48,7 +48,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python main.py --nifty500
+        run: python main.py --nifty500 --telegram
 
       - name: Commit scan JSON to repo
         run: |

@@ -38,6 +38,7 @@ def _serialize_zone(zone):
             else str(zone["last_touch"])
         ),
         "distance_pct": zone.get("distance_pct"),
+        "backtest": zone.get("backtest"),
     }
 
 
@@ -66,6 +67,18 @@ def _serialize_stock(stock):
         "dma_200": stock.get("dma_200"),
         "is_above_200dma": stock.get("is_above_200dma"),
     }
+
+    # Risk/Reward
+    if stock.get("risk_reward"):
+        entry["risk_reward"] = stock["risk_reward"]
+
+    # Volume / Delivery / Confidence
+    if stock.get("vol_signal"):
+        entry["vol_signal"] = stock["vol_signal"]
+    if stock.get("delivery_pct") is not None:
+        entry["delivery_pct"] = stock["delivery_pct"]
+    if stock.get("confidence"):
+        entry["confidence"] = stock["confidence"]
 
     # Extra fields for deep_value / falling_knife
     if stock.get("below_support_pct") is not None:

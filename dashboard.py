@@ -50,10 +50,29 @@ def _stock_detail_card(stock: dict):
         if zone:
             st.markdown(f"**Zone:** \u20B9{zone.get('low', 0):,.0f} - \u20B9{zone.get('high', 0):,.0f}")
             st.markdown(f"**Touches:** {zone.get('touches', 0)}x | **Distance:** {zone.get('distance_pct', 0):.1f}%")
+            bt = zone.get("backtest") or {}
+            if bt.get("total", 0) > 0:
+                st.markdown(f"**Win Rate:** {bt['win_rate']:.0f}% ({bt['wins']}/{bt['total']})")
+        rr = stock.get("risk_reward") or {}
+        if rr:
+            st.markdown(f"**SL:** \u20B9{rr.get('stop_loss', 0):,.0f} | **Tgt:** \u20B9{rr.get('target', 0):,.0f} | **R:R:** {rr.get('rr_ratio', 0)}:1")
         pe = fund.get("pe", "-")
         roe = fund.get("roe", "-")
         de = fund.get("de", "-")
         st.markdown(f"**P/E:** {pe} | **ROE:** {roe} | **D/E:** {de}")
+        vol_sig = stock.get("vol_signal")
+        del_pct = stock.get("delivery_pct")
+        conf = stock.get("confidence")
+        if vol_sig or del_pct or conf:
+            parts = []
+            if vol_sig:
+                parts.append(f"**Vol:** {vol_sig}")
+            if del_pct is not None:
+                parts.append(f"**Del%:** {del_pct}%")
+            if conf:
+                cc = {"HIGH": "#2ecc71", "MEDIUM": "#f39c12", "LOW": "#e74c3c"}.get(conf, "#aaa")
+                parts.append(f'**Conf:** <span style="color:{cc}">{conf}</span>')
+            st.markdown(" | ".join(parts), unsafe_allow_html=True)
 
     with col3:
         verdict = stock.get("fund_verdict", "")
@@ -116,37 +135,60 @@ def _color_change(v) -> str:
     return "color: #2ecc71" if v >= 0 else "color: #e74c3c"
 
 
-def _build_df(stocks: list, extra_cols: list[str] | None = None) -> pd.DataFrame:
-    """Build a display DataFrame from a list of stock dicts."""
+def _build_df(stocks: list, extra_cols: list[str] | None = None, mode: str = "buy") -> pd.DataFrame:
+    """Build a display DataFrame from a list of stock dicts.
+
+    mode: 'buy' = buy zone columns, 'profit' = profit zone, 'broken' = deep value/falling knife.
+    """
     if not stocks:
         return pd.DataFrame()
 
     rows = []
     for s in stocks:
         zone = s.get("zone") or {}
-        fund = s.get("fundamentals") or {}
         zone_str = f"{int(zone['low'])}-{int(zone['high'])}" if zone.get("low") else "-"
         sym = s.get("symbol", "")
         tv_url = _tradingview_link(sym)
+
         row = {
             "Symbol": tv_url,
             "Price": s.get("current_price"),
             "Day Chg%": s.get("day_change_pct"),
             "Sector": s.get("sector", ""),
-            "Zone": zone_str,
-            "Touches": zone.get("touches"),
-            "Dist%": zone.get("distance_pct"),
-            "P/E": fund.get("pe"),
-            "ROE": fund.get("roe"),
-            "D/E": fund.get("de"),
-            "MCap": _fmt_mcap(fund.get("mcap_cr")),
-            "Verdict": s.get("fund_verdict", ""),
         }
-        if extra_cols:
-            if "Below Support%" in extra_cols:
+
+        if mode == "buy":
+            # Buy zone columns — full trading signals
+            bt = zone.get("backtest") or {}
+            wr_val = bt.get("win_rate") if bt.get("total", 0) > 0 else None
+            rr = s.get("risk_reward") or {}
+            row["Zone"] = zone_str
+            row["Dist%"] = zone.get("distance_pct")
+            row["SL"] = rr.get("stop_loss")
+            row["Tgt"] = rr.get("target")
+            row["R:R"] = rr.get("rr_ratio")
+            row["Vol"] = s.get("vol_signal", "")
+            row["Del%"] = s.get("delivery_pct")
+            row["Conf"] = s.get("confidence", "")
+            row["WR%"] = wr_val
+            row["Verdict"] = s.get("fund_verdict", "")
+        elif mode == "profit":
+            # Profit zone — no R:R/SL/Tgt, just zone + vol/del
+            row["Zone"] = zone_str
+            row["Dist%"] = zone.get("distance_pct")
+            row["Vol"] = s.get("vol_signal", "")
+            row["Del%"] = s.get("delivery_pct")
+            row["Verdict"] = s.get("fund_verdict", "")
+        else:
+            # Deep value / Falling knife columns
+            if extra_cols and "Below Support%" in extra_cols:
                 row["Below Sup%"] = s.get("below_support_pct")
-            if "From 52W Low%" in extra_cols:
+            if extra_cols and "From 52W Low%" in extra_cols:
                 row["From 52W Low%"] = s.get("near_52w_low_pct")
+            row["Vol"] = s.get("vol_signal", "")
+            row["Del%"] = s.get("delivery_pct")
+            row["Verdict"] = s.get("fund_verdict", "")
+
         rows.append(row)
 
     df = pd.DataFrame(rows)
@@ -167,6 +209,36 @@ def _style_table(df: pd.DataFrame):
             v = row["Day Chg%"]
             if v is not None and not (isinstance(v, float) and pd.isna(v)):
                 styles[pos] = "color: #2ecc71" if v >= 0 else "color: #e74c3c"
+
+        if "Conf" in idx:
+            pos = idx.index("Conf")
+            v = row["Conf"]
+            colors = {"HIGH": "#2ecc71", "MEDIUM": "#f39c12", "LOW": "#e74c3c"}
+            c = colors.get(v, "")
+            if c:
+                styles[pos] = f"color: {c}; font-weight: bold"
+
+        if "R:R" in idx:
+            pos = idx.index("R:R")
+            v = row["R:R"]
+            if v is not None and not (isinstance(v, float) and pd.isna(v)):
+                if v >= 2:
+                    styles[pos] = "color: #2ecc71; font-weight: bold"
+                elif v >= 1.5:
+                    styles[pos] = "color: #f39c12"
+                else:
+                    styles[pos] = "color: #e74c3c"
+
+        if "WR%" in idx:
+            pos = idx.index("WR%")
+            v = row["WR%"]
+            if v is not None and not (isinstance(v, float) and pd.isna(v)):
+                if v >= 60:
+                    styles[pos] = "color: #2ecc71; font-weight: bold"
+                elif v >= 40:
+                    styles[pos] = "color: #f39c12"
+                else:
+                    styles[pos] = "color: #e74c3c"
 
         if "Verdict" in idx:
             pos = idx.index("Verdict")
@@ -194,6 +266,16 @@ def _style_table(df: pd.DataFrame):
         fmt["ROE"] = "{:.1f}"
     if "D/E" in df.columns:
         fmt["D/E"] = "{:.1f}"
+    if "SL" in df.columns:
+        fmt["SL"] = "{:.0f}"
+    if "Tgt" in df.columns:
+        fmt["Tgt"] = "{:.0f}"
+    if "R:R" in df.columns:
+        fmt["R:R"] = "{:.1f}"
+    if "Del%" in df.columns:
+        fmt["Del%"] = "{:.1f}%"
+    if "WR%" in df.columns:
+        fmt["WR%"] = "{:.0f}%"
     if "Below Sup%" in df.columns:
         fmt["Below Sup%"] = "{:.1f}%"
     if "From 52W Low%" in df.columns:
@@ -203,9 +285,9 @@ def _style_table(df: pd.DataFrame):
     return styled
 
 
-def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = ""):
+def _render_table(stocks: list, extra_cols: list[str] | None = None, key: str = "", mode: str = "buy"):
     """Render a styled, sortable stock table with clickable symbols."""
-    df = _build_df(stocks, extra_cols)
+    df = _build_df(stocks, extra_cols, mode=mode)
     if df.empty:
         st.info("No stocks in this category.")
         return
@@ -371,12 +453,12 @@ with tab_buy:
 with tab_profit:
     st.subheader("Stocks Near Resistance")
     st.caption("These stocks are approaching supply zones. Consider booking partial profits.")
-    _render_table(profit_zone, key="profit")
+    _render_table(profit_zone, key="profit", mode="profit")
 
 with tab_deep:
     st.subheader("Deep Value Watchlist")
     st.caption("Stocks trading well below support with strong fundamentals. Potential deep value picks.")
-    _render_table(deep_value, extra_cols=["Below Support%", "From 52W Low%"], key="deep")
+    _render_table(deep_value, extra_cols=["Below Support%", "From 52W Low%"], key="deep", mode="broken")
 
 with tab_knife:
     st.markdown(
@@ -384,7 +466,7 @@ with tab_knife:
         unsafe_allow_html=True,
     )
     st.caption("Stocks in freefall with weak fundamentals. High risk of further downside.")
-    _render_table(falling_knife, extra_cols=["Below Support%"], key="knife")
+    _render_table(falling_knife, extra_cols=["Below Support%"], key="knife", mode="broken")
 
 # --- Sector Strength ---
 st.divider()

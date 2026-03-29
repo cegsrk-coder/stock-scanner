@@ -8,8 +8,10 @@ from datetime import datetime
 from config.stocks import ALL_STOCKS
 from config.settings import PROXIMITY_PCT, LOOKBACK_YEARS
 from data_fetcher import fetch_stock_data, get_5paisa_client
-from level_detector import detect_levels, check_proximity
+from level_detector import detect_levels, check_proximity, backtest_zone_bounces
 from fundamentals import get_fundamentals, fundamental_verdict
+from allocator import calc_risk_reward
+from volume_analysis import analyze_volume_trend, fetch_delivery_pct, calc_confidence
 from nifty500 import get_tier2_stocks
 
 
@@ -28,6 +30,10 @@ def scan_stock(symbol, stock_info, client=None):
 
     # Detect levels
     levels = detect_levels(daily_df, weekly_df)
+
+    # Backtest each support zone
+    for zone in levels["support_zones"]:
+        zone["backtest"] = backtest_zone_bounces(daily_df, zone)
 
     # Current price
     current_price = daily_df["Close"].iloc[-1]
@@ -56,6 +62,22 @@ def scan_stock(symbol, stock_info, client=None):
         if current_price < lowest_support:
             broken_below_support = True
             below_support_pct = round((lowest_support - current_price) / lowest_support * 100, 1)
+
+    # Risk/Reward for stocks near support
+    risk_reward = None
+    vol_data = None
+    delivery_pct = None
+    confidence = None
+    if near_support:
+        risk_reward = calc_risk_reward(current_price, near_support[0], levels["resistance_zones"])
+        vol_data = analyze_volume_trend(daily_df)
+        delivery_pct = fetch_delivery_pct(symbol)
+        best_zone_score = near_support[0].get("score", 0)
+        confidence = calc_confidence(best_zone_score, vol_data["vol_signal"], delivery_pct)
+    elif near_resistance or broken_below_support:
+        # Fetch volume/delivery for profit zone and deep value stocks too
+        vol_data = analyze_volume_trend(daily_df)
+        delivery_pct = fetch_delivery_pct(symbol)
 
     # Fetch fundamentals for actionable stocks (near zone or broken below support)
     fund = None
@@ -88,6 +110,10 @@ def scan_stock(symbol, stock_info, client=None):
         "near_52w_low_pct": near_52w_low_pct,
         "fundamentals": fund,
         "fund_verdict": fund_verdict,
+        "risk_reward": risk_reward,
+        "vol_signal": vol_data["vol_signal"] if vol_data else None,
+        "delivery_pct": delivery_pct,
+        "confidence": confidence,
     }
 
 
@@ -133,8 +159,12 @@ def run_full_scan(stock_universe=None, client=None):
     broken_below = [r for r in results if r.get("broken_below_support")]
     no_signal = [r for r in results if not r["is_near_support"] and not r["is_near_resistance"] and not r.get("broken_below_support")]
 
-    # Sort by closest to level
-    near_support.sort(key=lambda r: r["near_support"][0]["distance_pct"] if r["near_support"] else 99)
+    # Sort buy zone by confidence first, then distance
+    conf_order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2, None: 3}
+    near_support.sort(key=lambda r: (
+        conf_order.get(r.get("confidence"), 3),
+        r["near_support"][0]["distance_pct"] if r["near_support"] else 99,
+    ))
     near_resistance.sort(key=lambda r: r["near_resistance"][0]["distance_pct"] if r["near_resistance"] else 99)
 
     # Split broken-below into deep value vs falling knife

@@ -60,22 +60,43 @@ def generate_terminal_report(scan_results, title=None, print_output=True):
             de = f"{f['de']}" if f.get("de") is not None else "—"
             mcap = format_mcap(f.get("mcap_cr"))
             verdict = s.get("fund_verdict", "—")
+            # Risk/Reward
+            rr = s.get("risk_reward") or {}
+            sl = f"{rr['stop_loss']:,.0f}" if rr.get("stop_loss") else "—"
+            tgt = f"{rr['target']:,.0f}" if rr.get("target") else "—"
+            rr_str = f"{rr['rr_ratio']}:1" if rr.get("rr_ratio") else "—"
+
+            # Volume / Delivery / Confidence
+            vol = s.get("vol_signal") or "—"
+            del_pct = f"{s['delivery_pct']}%" if s.get("delivery_pct") is not None else "—"
+            conf = s.get("confidence") or "—"
+
+            # Win rate from backtest
+            bt = s["near_support"][0].get("backtest") if s.get("near_support") else None
+            if bt and bt.get("total", 0) > 0:
+                wr = f"{bt['win_rate']:.0f}% ({bt['wins']}/{bt['total']})"
+            else:
+                wr = "—"
+
             table_data.append([
                 s["symbol"],
                 f"Rs.{s['current_price']:,.2f}",
                 f"{s['day_change_pct']:+.1f}%",
                 s["sector"],
                 format_zone_brief(s["near_support"], "support"),
-                pe,
-                roe,
-                de,
-                mcap,
+                sl,
+                tgt,
+                rr_str,
+                vol,
+                del_pct,
+                conf,
                 verdict,
+                wr,
             ])
 
         output.append(tabulate(
             table_data,
-            headers=["Stock", "Price", "Day Chg", "Sector", "Support Zone", "P/E", "ROE", "D/E", "MCap", "Fund."],
+            headers=["Stock", "Price", "Day Chg", "Sector", "Support Zone", "SL", "Tgt", "R:R", "Vol", "Del%", "Conf", "Fund.", "WR"],
             tablefmt="simple",
             stralign="left",
         ))

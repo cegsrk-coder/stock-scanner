@@ -204,6 +204,45 @@ def detect_levels(daily_df, weekly_df):
     }
 
 
+def backtest_zone_bounces(daily_df, zone, lookahead_days=10, bounce_pct=3.0):
+    """
+    For a support zone, check each historical touch to see if price
+    bounced up by bounce_pct% within lookahead_days trading days.
+    Returns {"wins": N, "total": N, "win_rate": float}.
+    """
+    if daily_df is None or daily_df.empty or not zone.get("dates"):
+        return {"wins": 0, "total": 0, "win_rate": 0.0}
+
+    dt_index = daily_df["Datetime"].values
+    highs = daily_df["High"].values
+    closes = daily_df["Close"].values
+
+    wins = 0
+    total = 0
+
+    for touch_date in zone["dates"]:
+        # Find nearest daily bar on or after the touch date
+        touch_ts = pd.Timestamp(touch_date)
+        matches = np.where(dt_index >= touch_ts.to_numpy())[0]
+        if len(matches) == 0:
+            continue
+
+        idx = matches[0]
+        # Need enough future bars to check
+        if idx + lookahead_days >= len(daily_df):
+            continue
+
+        total += 1
+        entry_close = closes[idx]
+        future_high = highs[idx + 1 : idx + 1 + lookahead_days].max()
+
+        if future_high >= entry_close * (1 + bounce_pct / 100):
+            wins += 1
+
+    win_rate = round(wins / total * 100, 1) if total > 0 else 0.0
+    return {"wins": wins, "total": total, "win_rate": win_rate}
+
+
 def check_proximity(current_price, zones, proximity_pct):
     """
     Check if current price is within proximity_pct% of any zone.

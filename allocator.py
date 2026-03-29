@@ -77,13 +77,30 @@ def score_candidate(stock, sector_strength):
     return round(score, 1)
 
 
+def calc_risk_reward(current_price, support_zone, resistance_zones):
+    """
+    Calculate risk/reward for a stock near support.
+    Returns dict with stop_loss, target, risk_pct, reward_pct, rr_ratio.
+    """
+    stop_loss = support_zone["low"] * 0.97  # 3% below support low
+    target = resistance_zones[0]["center"] if resistance_zones else current_price * 1.15
+    risk_pct = round((current_price - stop_loss) / current_price * 100, 1)
+    reward_pct = round((target - current_price) / current_price * 100, 1)
+    rr_ratio = round(reward_pct / risk_pct, 1) if risk_pct > 0 else 0
+
+    return {
+        "stop_loss": round(stop_loss, 2),
+        "target": round(target, 2),
+        "risk_pct": risk_pct,
+        "reward_pct": reward_pct,
+        "rr_ratio": rr_ratio,
+    }
+
+
 def _build_allocation_entry(c):
     """Build a single allocation entry dict for a candidate."""
     best_zone = c["near_support"][0]
-    stop_loss = best_zone["low"] * 0.97  # 3% below support
-    target = c["all_resistance_zones"][0]["center"] if c["all_resistance_zones"] else c["current_price"] * 1.15
-    risk_pct = round((c["current_price"] - stop_loss) / c["current_price"] * 100, 1)
-    reward_pct = round((target - c["current_price"]) / c["current_price"] * 100, 1)
+    rr = calc_risk_reward(c["current_price"], best_zone, c.get("all_resistance_zones", []))
 
     return {
         "symbol": c["symbol"],
@@ -95,10 +112,10 @@ def _build_allocation_entry(c):
         "zone_touches": best_zone["touches"],
         "zone_score": best_zone["score"],
         "distance_pct": best_zone.get("distance_pct", 0),
-        "stop_loss": round(stop_loss, 2),
-        "target": round(target, 2),
-        "risk_pct": risk_pct,
-        "reward_pct": reward_pct,
+        "stop_loss": rr["stop_loss"],
+        "target": rr["target"],
+        "risk_pct": rr["risk_pct"],
+        "reward_pct": rr["reward_pct"],
     }
 
 
