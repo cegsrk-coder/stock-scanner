@@ -1,0 +1,1078 @@
+{
+  "scan_date": "2026-04-01 23:42",
+  "total_scanned": 501,
+  "near_support": [
+    {
+      "symbol": "LTFOODS",
+      "name": "LT Foods Ltd.",
+      "sector": "Fast Moving Consumer Goods",
+      "current_price": 384.0,
+      "day_change_pct": 5.7,
+      "zone": {
+        "low": 382.9699566749813,
+        "high": 386.5236345565475,
+        "score": 4,
+        "touches": 4,
+        "last_touch": "2025-10-12",
+        "distance_pct": 0.19,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.5,
+        "roe": null,
+        "de": 43.09,
+        "mcap_cr": 13341.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 514.98,
+      "week_52_low": 286.27,
+      "dma_200": 420.05,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 371.48,
+        "target": 476.4,
+        "risk_pct": 3.3,
+        "reward_pct": 24.1,
+        "rr_ratio": 7.3
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 36.2,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 34.1
+    },
+    {
+      "symbol": "KPIL",
+      "name": "Kalpataru Projects International Ltd.",
+      "sector": "Construction",
+      "current_price": 1096.5,
+      "day_change_pct": 3.68,
+      "zone": {
+        "low": 1100.699951171875,
+        "high": 1117.0,
+        "score": 4.5,
+        "touches": 5,
+        "last_touch": "2025-12-18",
+        "distance_pct": 0.38,
+        "backtest": {
+          "wins": 5,
+          "total": 5,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 22.4,
+        "roe": null,
+        "de": 69.69,
+        "mcap_cr": 18725.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1335.6,
+      "week_52_low": 780.2,
+      "dma_200": 1190.91,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1067.68,
+        "target": 1230.68,
+        "risk_pct": 2.6,
+        "reward_pct": 12.2,
+        "rr_ratio": 4.7
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 52.1,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 40.5
+    },
+    {
+      "symbol": "UNITDSPR",
+      "name": "United Spirits Ltd.",
+      "sector": "Fast Moving Consumer Goods",
+      "current_price": 1249.3,
+      "day_change_pct": 2.5,
+      "zone": {
+        "low": 1254.3178547641019,
+        "high": 1278.021558835756,
+        "score": 4,
+        "touches": 7,
+        "last_touch": "2026-01-25",
+        "distance_pct": 0.4,
+        "backtest": {
+          "wins": 7,
+          "total": 7,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 51.5,
+        "roe": null,
+        "de": 4.9,
+        "mcap_cr": 90874.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1627.82,
+      "week_52_low": 1211.5,
+      "dma_200": 1363.91,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1216.69,
+        "target": 1471.41,
+        "risk_pct": 2.6,
+        "reward_pct": 17.8,
+        "rr_ratio": 6.8
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 65.5,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 3.1
+    },
+    {
+      "symbol": "IGIL",
+      "name": "International Gemmological Institute (India) Ltd.",
+      "sector": "Services",
+      "current_price": 324.15,
+      "day_change_pct": 1.95,
+      "zone": {
+        "low": 312.9857160581195,
+        "high": 317.85112104170014,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2025-11-19",
+        "distance_pct": 1.94,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 27.3,
+        "roe": 43.0,
+        "de": 10.12,
+        "mcap_cr": 14008.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 435.36,
+      "week_52_low": 284.8,
+      "dma_200": 341.47,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 303.6,
+        "target": 365.83,
+        "risk_pct": 6.3,
+        "reward_pct": 12.9,
+        "rr_ratio": 2.0
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 35.4,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 13.8
+    },
+    {
+      "symbol": "AEGISLOG",
+      "name": "Aegis Logistics Ltd.",
+      "sector": "Oil Gas & Consumable Fuels",
+      "current_price": 603.4,
+      "day_change_pct": 0.79,
+      "zone": {
+        "low": 603.4445922889223,
+        "high": 603.4445922889223,
+        "score": 2.5,
+        "touches": 2,
+        "last_touch": "2025-02-02",
+        "distance_pct": 0.01,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 27.5,
+        "roe": null,
+        "de": 28.45,
+        "mcap_cr": 21179.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 944.6,
+      "week_52_low": 576.1,
+      "dma_200": 732.17,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 585.34,
+        "target": 751.36,
+        "risk_pct": 3.0,
+        "reward_pct": 24.5,
+        "rr_ratio": 8.2
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 50.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 4.7
+    },
+    {
+      "symbol": "NUVAMA",
+      "name": "Nuvama Wealth Management Ltd.",
+      "sector": "Financial Services",
+      "current_price": 1138.9,
+      "day_change_pct": -1.91,
+      "zone": {
+        "low": 1139.5390388257865,
+        "high": 1143.3824962213916,
+        "score": 2.5,
+        "touches": 3,
+        "last_touch": "2025-09-28",
+        "distance_pct": 0.06,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.6,
+        "roe": null,
+        "de": 237.58,
+        "mcap_cr": 20742.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1621.95,
+      "week_52_low": 860.22,
+      "dma_200": 1350.9,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1105.35,
+        "target": 1394.97,
+        "risk_pct": 2.9,
+        "reward_pct": 22.5,
+        "rr_ratio": 7.8
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 40.6,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 32.4
+    },
+    {
+      "symbol": "SBFC",
+      "name": "SBFC Finance Ltd.",
+      "sector": "Financial Services",
+      "current_price": 83.97,
+      "day_change_pct": 3.73,
+      "zone": {
+        "low": 82.75,
+        "high": 83.76000213623047,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2026-02-08",
+        "distance_pct": 0.25,
+        "backtest": {
+          "wins": 3,
+          "total": 4,
+          "win_rate": 75.0
+        }
+      },
+      "fundamentals": {
+        "pe": 21.9,
+        "roe": null,
+        "de": 179.82,
+        "mcap_cr": 9285.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 123.0,
+      "week_52_low": 79.6,
+      "dma_200": 104.51,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 80.27,
+        "target": 109.49,
+        "risk_pct": 4.4,
+        "reward_pct": 30.4,
+        "rr_ratio": 6.9
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 47.0,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 5.5
+    },
+    {
+      "symbol": "JSWINFRA",
+      "name": "JSW Infrastructure Ltd.",
+      "sector": "Services",
+      "current_price": 247.95,
+      "day_change_pct": 2.97,
+      "zone": {
+        "low": 248.95317278214364,
+        "high": 251.14999389648438,
+        "score": 4,
+        "touches": 4,
+        "last_touch": "2026-02-08",
+        "distance_pct": 0.4,
+        "backtest": {
+          "wins": 3,
+          "total": 4,
+          "win_rate": 75.0
+        }
+      },
+      "fundamentals": {
+        "pe": 32.1,
+        "roe": null,
+        "de": 48.27,
+        "mcap_cr": 51680.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 349.0,
+      "week_52_low": 239.7,
+      "dma_200": 287.88,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 241.48,
+        "target": 273.62,
+        "risk_pct": 2.6,
+        "reward_pct": 10.4,
+        "rr_ratio": 4.0
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 49.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 3.4
+    },
+    {
+      "symbol": "RRKABEL",
+      "name": "R R Kabel Ltd.",
+      "sector": "Capital Goods",
+      "current_price": 1333.3,
+      "day_change_pct": 3.08,
+      "zone": {
+        "low": 1303.0195252870435,
+        "high": 1315.800048828125,
+        "score": 3.0,
+        "touches": 3,
+        "last_touch": "2025-11-30",
+        "distance_pct": 1.31,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 33.2,
+        "roe": null,
+        "de": 16.78,
+        "mcap_cr": 15080.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1578.2,
+      "week_52_low": 859.31,
+      "dma_200": 1360.11,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1263.93,
+        "target": 1513.64,
+        "risk_pct": 5.2,
+        "reward_pct": 13.5,
+        "rr_ratio": 2.6
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 34.9,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 55.2
+    },
+    {
+      "symbol": "ETERNAL",
+      "name": "Eternal Ltd.",
+      "sector": "Consumer Services",
+      "current_price": 236.52,
+      "day_change_pct": 3.29,
+      "zone": {
+        "low": 240.0,
+        "high": 240.39999389648438,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-11-10",
+        "distance_pct": 1.47,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 1028.3,
+        "roe": null,
+        "de": 10.88,
+        "mcap_cr": 215520.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 368.45,
+      "week_52_low": 194.8,
+      "dma_200": 290.65,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 232.8,
+        "target": 306.3,
+        "risk_pct": 1.6,
+        "reward_pct": 29.5,
+        "rr_ratio": 18.4
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 47.9,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 21.4
+    },
+    {
+      "symbol": "JIOFIN",
+      "name": "Jio Financial Services Ltd.",
+      "sector": "Financial Services",
+      "current_price": 231.93,
+      "day_change_pct": 3.49,
+      "zone": {
+        "low": 237.0,
+        "high": 241.6232286503219,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2026-02-08",
+        "distance_pct": 2.19,
+        "backtest": {
+          "wins": 2,
+          "total": 3,
+          "win_rate": 66.7
+        }
+      },
+      "fundamentals": {
+        "pe": 91.7,
+        "roe": null,
+        "de": 7.8,
+        "mcap_cr": 147348.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 338.07,
+      "week_52_low": 202.78,
+      "dma_200": 294.58,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 229.89,
+        "target": 317.78,
+        "risk_pct": 0.9,
+        "reward_pct": 37.0,
+        "rr_ratio": 41.1
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 43.8,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 14.4
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "name": "Adani Energy Solutions Ltd.",
+      "sector": "Power",
+      "current_price": 956.6,
+      "day_change_pct": 2.32,
+      "zone": {
+        "low": 970.5,
+        "high": 975.0,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-07-28",
+        "distance_pct": 1.45,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 51.4,
+        "roe": null,
+        "de": 186.65,
+        "mcap_cr": 115048.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1067.7,
+      "week_52_low": 744.9,
+      "dma_200": 921.89,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 941.38,
+        "target": 1066.95,
+        "risk_pct": 1.6,
+        "reward_pct": 11.5,
+        "rr_ratio": 7.2
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 38.8,
+      "confidence": "LOW",
+      "near_52w_low_pct": 28.4
+    },
+    {
+      "symbol": "THELEELA",
+      "name": "Leela Palaces Hotels & Resorts Ltd.",
+      "sector": "Consumer Services",
+      "current_price": 417.15,
+      "day_change_pct": 1.84,
+      "zone": {
+        "low": 403.6499938964844,
+        "high": 410.1000061035156,
+        "score": 2,
+        "touches": 2,
+        "last_touch": "2025-09-29",
+        "distance_pct": 1.69,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 35.9,
+        "roe": null,
+        "de": 27.67,
+        "mcap_cr": 13931.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 474.4,
+      "week_52_low": 382.5,
+      "dma_200": 424.17,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 391.54,
+        "target": 449.1,
+        "risk_pct": 6.1,
+        "reward_pct": 7.7,
+        "rr_ratio": 1.3
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 49.0,
+      "confidence": "LOW",
+      "near_52w_low_pct": 9.1
+    }
+  ],
+  "near_resistance": [
+    {
+      "symbol": "EMCURE",
+      "name": "Emcure Pharmaceuticals Ltd.",
+      "sector": "Healthcare",
+      "current_price": 1590.1,
+      "day_change_pct": -0.34,
+      "zone": {
+        "low": 1565.199951171875,
+        "high": 1585.5999755859375,
+        "score": 4,
+        "touches": 6,
+        "last_touch": "2026-03-10",
+        "distance_pct": 0.28,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 34.6,
+        "roe": null,
+        "de": 33.97,
+        "mcap_cr": 30147.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1671.8,
+      "week_52_low": 887.17,
+      "dma_200": 1409.08,
+      "is_above_200dma": true,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 50.1,
+      "near_52w_low_pct": 79.2
+    },
+    {
+      "symbol": "RRKABEL",
+      "name": "R R Kabel Ltd.",
+      "sector": "Capital Goods",
+      "current_price": 1333.3,
+      "day_change_pct": 3.08,
+      "zone": {
+        "low": 1303.0195252870435,
+        "high": 1315.800048828125,
+        "score": 3.0,
+        "touches": 3,
+        "last_touch": "2025-11-30",
+        "distance_pct": 1.31,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 33.2,
+        "roe": null,
+        "de": 16.78,
+        "mcap_cr": 15080.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1578.2,
+      "week_52_low": 859.31,
+      "dma_200": 1360.11,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1263.93,
+        "target": 1513.64,
+        "risk_pct": 5.2,
+        "reward_pct": 13.5,
+        "rr_ratio": 2.6
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 34.9,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 55.2
+    },
+    {
+      "symbol": "JAINREC",
+      "name": "Jain Resource Recycling Ltd.",
+      "sector": "Metals & Mining",
+      "current_price": 464.7,
+      "day_change_pct": 1.8,
+      "zone": {
+        "low": 461.0,
+        "high": 461.0,
+        "score": 3,
+        "touches": 2,
+        "last_touch": "2025-11-23",
+        "distance_pct": 0.8,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 46.3,
+        "roe": null,
+        "de": 94.85,
+        "mcap_cr": 16036.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 476.9,
+      "week_52_low": 247.57,
+      "dma_200": null,
+      "is_above_200dma": null,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 33.9,
+      "near_52w_low_pct": 87.7
+    },
+    {
+      "symbol": "ETERNAL",
+      "name": "Eternal Ltd.",
+      "sector": "Consumer Services",
+      "current_price": 236.52,
+      "day_change_pct": 3.29,
+      "zone": {
+        "low": 240.0,
+        "high": 240.39999389648438,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-11-10",
+        "distance_pct": 1.47,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 1028.3,
+        "roe": null,
+        "de": 10.88,
+        "mcap_cr": 215520.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 368.45,
+      "week_52_low": 194.8,
+      "dma_200": 290.65,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 232.8,
+        "target": 306.3,
+        "risk_pct": 1.6,
+        "reward_pct": 29.5,
+        "rr_ratio": 18.4
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 47.9,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 21.4
+    },
+    {
+      "symbol": "JIOFIN",
+      "name": "Jio Financial Services Ltd.",
+      "sector": "Financial Services",
+      "current_price": 231.93,
+      "day_change_pct": 3.49,
+      "zone": {
+        "low": 237.0,
+        "high": 241.6232286503219,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2026-02-08",
+        "distance_pct": 2.19,
+        "backtest": {
+          "wins": 2,
+          "total": 3,
+          "win_rate": 66.7
+        }
+      },
+      "fundamentals": {
+        "pe": 91.7,
+        "roe": null,
+        "de": 7.8,
+        "mcap_cr": 147348.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 338.07,
+      "week_52_low": 202.78,
+      "dma_200": 294.58,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 229.89,
+        "target": 317.78,
+        "risk_pct": 0.9,
+        "reward_pct": 37.0,
+        "rr_ratio": 41.1
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 43.8,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 14.4
+    },
+    {
+      "symbol": "HBLENGINE",
+      "name": "HBL Engineering Ltd.",
+      "sector": "Capital Goods",
+      "current_price": 660.3,
+      "day_change_pct": 7.4,
+      "zone": {
+        "low": 647.3179208538481,
+        "high": 647.3179208538481,
+        "score": 2,
+        "touches": 2,
+        "last_touch": "2025-07-13",
+        "distance_pct": 1.97,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 23.0,
+        "roe": null,
+        "de": 4.4,
+        "mcap_cr": 18303.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1119.11,
+      "week_52_low": 438.45,
+      "dma_200": 774.26,
+      "is_above_200dma": false,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 28.4,
+      "near_52w_low_pct": 50.6
+    },
+    {
+      "symbol": "NUVAMA",
+      "name": "Nuvama Wealth Management Ltd.",
+      "sector": "Financial Services",
+      "current_price": 1138.9,
+      "day_change_pct": -1.91,
+      "zone": {
+        "low": 1139.5390388257865,
+        "high": 1143.3824962213916,
+        "score": 2.5,
+        "touches": 3,
+        "last_touch": "2025-09-28",
+        "distance_pct": 0.06,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.6,
+        "roe": null,
+        "de": 237.58,
+        "mcap_cr": 20742.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1621.95,
+      "week_52_low": 860.22,
+      "dma_200": 1350.9,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1105.35,
+        "target": 1394.97,
+        "risk_pct": 2.9,
+        "reward_pct": 22.5,
+        "rr_ratio": 7.8
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 40.6,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 32.4
+    },
+    {
+      "symbol": "LTFOODS",
+      "name": "LT Foods Ltd.",
+      "sector": "Fast Moving Consumer Goods",
+      "current_price": 384.0,
+      "day_change_pct": 5.7,
+      "zone": {
+        "low": 382.9699566749813,
+        "high": 386.5236345565475,
+        "score": 4,
+        "touches": 4,
+        "last_touch": "2025-10-12",
+        "distance_pct": 0.19,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.5,
+        "roe": null,
+        "de": 43.09,
+        "mcap_cr": 13341.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 514.98,
+      "week_52_low": 286.27,
+      "dma_200": 420.05,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 371.48,
+        "target": 476.4,
+        "risk_pct": 3.3,
+        "reward_pct": 24.1,
+        "rr_ratio": 7.3
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 36.2,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 34.1
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "name": "Adani Energy Solutions Ltd.",
+      "sector": "Power",
+      "current_price": 956.6,
+      "day_change_pct": 2.32,
+      "zone": {
+        "low": 970.5,
+        "high": 975.0,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-07-28",
+        "distance_pct": 1.45,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 51.4,
+        "roe": null,
+        "de": 186.65,
+        "mcap_cr": 115048.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1067.7,
+      "week_52_low": 744.9,
+      "dma_200": 921.89,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 941.38,
+        "target": 1066.95,
+        "risk_pct": 1.6,
+        "reward_pct": 11.5,
+        "rr_ratio": 7.2
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 38.8,
+      "confidence": "LOW",
+      "near_52w_low_pct": 28.4
+    }
+  ],
+  "deep_value": [
+    {
+      "symbol": "ARE&M",
+      "name": "Amara Raja Energy & Mobility Ltd.",
+      "sector": "Automobile and Auto Components",
+      "current_price": 713.9,
+      "day_change_pct": 6.16,
+      "zone": null,
+      "fundamentals": {
+        "pe": 17.6,
+        "roe": null,
+        "de": 4.0,
+        "mcap_cr": 13068.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1082.0,
+      "week_52_low": 670.0,
+      "dma_200": 930.48,
+      "is_above_200dma": false,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 35.7,
+      "below_support_pct": 11.9,
+      "near_52w_low_pct": 6.6
+    }
+  ],
+  "falling_knife": [
+    {
+      "symbol": "TMPV",
+      "name": "Tata Motors",
+      "sector": "Auto",
+      "current_price": 302.95,
+      "day_change_pct": 2.28,
+      "zone": null,
+      "fundamentals": {
+        "pe": 28.5,
+        "roe": null,
+        "de": 56.13,
+        "mcap_cr": 111558.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 419.0,
+      "week_52_low": 294.3,
+      "dma_200": null,
+      "is_above_200dma": null,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 45.9,
+      "below_support_pct": 9.7,
+      "near_52w_low_pct": 2.9
+    },
+    {
+      "symbol": "TATATECH",
+      "name": "Tata Technologies Ltd.",
+      "sector": "Information Technology",
+      "current_price": 531.05,
+      "day_change_pct": 4.29,
+      "zone": null,
+      "fundamentals": {
+        "pe": 40.6,
+        "roe": null,
+        "de": 6.92,
+        "mcap_cr": 21560.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 784.62,
+      "week_52_low": 507.4,
+      "dma_200": 664.14,
+      "is_above_200dma": false,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 32.8,
+      "below_support_pct": 9.6,
+      "near_52w_low_pct": 4.7
+    },
+    {
+      "symbol": "CEMPRO",
+      "name": "Cemindia Projects Ltd.",
+      "sector": "Construction",
+      "current_price": 532.8,
+      "day_change_pct": 4.28,
+      "zone": null,
+      "fundamentals": {
+        "pe": 19.5,
+        "roe": null,
+        "de": 47.86,
+        "mcap_cr": 9153.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 891.0,
+      "week_52_low": 503.3,
+      "dma_200": null,
+      "is_above_200dma": null,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 43.5,
+      "below_support_pct": 29.7,
+      "near_52w_low_pct": 5.9
+    },
+    {
+      "symbol": "ABLBL",
+      "name": "Aditya Birla Lifestyle Brands Ltd.",
+      "sector": "Consumer Services",
+      "current_price": 93.52,
+      "day_change_pct": 6.0,
+      "zone": null,
+      "fundamentals": {
+        "pe": 38.2,
+        "roe": null,
+        "de": 266.81,
+        "mcap_cr": 11374.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 175.0,
+      "week_52_low": 87.91,
+      "dma_200": null,
+      "is_above_200dma": null,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 66.0,
+      "below_support_pct": 7.3,
+      "near_52w_low_pct": 6.4
+    },
+    {
+      "symbol": "ITCHOTELS",
+      "name": "ITC Hotels Ltd.",
+      "sector": "Consumer Services",
+      "current_price": 147.39,
+      "day_change_pct": 6.91,
+      "zone": null,
+      "fundamentals": {
+        "pe": 40.5,
+        "roe": null,
+        "de": 0.72,
+        "mcap_cr": 30701.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 261.62,
+      "week_52_low": 137.3,
+      "dma_200": 207.92,
+      "is_above_200dma": false,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 47.6,
+      "below_support_pct": 6.9,
+      "near_52w_low_pct": 7.3
+    }
+  ],
+  "sector_strength": {
+    "Power": 6.7,
+    "Healthcare": 4.5,
+    "Energy": 0.0,
+    "IT": 0.0,
+    "Banking": 0.0,
+    "FMCG": 0.0,
+    "Telecom": 0.0,
+    "Capital Goods": 0.0,
+    "Consumer": 0.0,
+    "Auto": 0.0,
+    "Pharma": 0.0,
+    "Finance": 0.0,
+    "Retail": 0.0,
+    "Cement": 0.0,
+    "Metals": 0.0,
+    "Conglomerate": 0.0,
+    "Infrastructure": 0.0,
+    "Mining": 0.0,
+    "Insurance": 0.0,
+    "Financial Services": 0.0,
+    "Diversified": 0.0,
+    "Construction Materials": 0.0,
+    "Fast Moving Consumer Goods": 0.0,
+    "Chemicals": 0.0,
+    "Oil Gas & Consumable Fuels": 0.0,
+    "Consumer Services": 0.0,
+    "Realty": 0.0,
+    "Construction": 0.0,
+    "Information Technology": 0.0,
+    "Consumer Durables": 0.0,
+    "Automobile and Auto Components": 0.0,
+    "Telecommunication": 0.0,
+    "Services": 0.0,
+    "Metals & Mining": 0.0,
+    "Textiles": 0.0,
+    "Media Entertainment & Publication": 0.0
+  },
+  "tier1_count": 60,
+  "tier2_count": 441
+}
