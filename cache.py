@@ -51,11 +51,20 @@ def is_cache_fresh(symbol):
         return False
 
     now = datetime.now()
-    # If it's a weekday after market close (4 PM), cache should have today's date
-    # If weekend, cache should have Friday's date
-    # Simple heuristic: cache is fresh if last_date is within 2 business days
-    days_diff = (now - last_date).days
-    return days_diff <= 3  # covers weekends
+    last_d = last_date.date() if hasattr(last_date, 'date') else last_date
+    today = now.date()
+
+    # Cache is fresh only if it contains data from the most recent trading day
+    # Walk backwards from today to find the last expected trading day
+    check = today
+    # If before market close (3:30 PM IST), yesterday's data is OK
+    if now.hour < 16:  # before 4 PM
+        check = today - timedelta(days=1)
+    # Skip weekends
+    while check.weekday() >= 5:  # Saturday=5, Sunday=6
+        check -= timedelta(days=1)
+
+    return last_d >= check
 
 
 def update_cache(symbol, fetch_func, full_period_years=2):
