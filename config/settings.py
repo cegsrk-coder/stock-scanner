@@ -38,6 +38,9 @@ PROXIMITY_PCT = 3.0  # Alert when price is within this % of a support/resistance
 ZONE_CLUSTER_PCT = 2.0  # Group swing points within this % into a single zone
 MIN_TOUCHES = 2  # Minimum touches to consider a zone valid
 
+# Data source settings
+JUGAAD_DELAY_SECONDS = 0.3  # Delay between jugaad-data API calls to avoid NSE rate limiting
+
 # Report settings
 REPORT_DIR = "reports"
 

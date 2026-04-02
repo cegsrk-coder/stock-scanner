@@ -1,9 +1,10 @@
 name: Daily Stock Scanner
 
 on:
-  # Runs at 4:00 PM IST (10:30 AM UTC) on weekdays (Mon-Fri)
+  # Runs at 6:00 AM IST (12:30 AM UTC) on weekdays (Mon-Fri)
+  # Fetches previous trading day's closing prices (available since 4:30 PM previous day)
   schedule:
-    - cron: '30 10 * * 1-5'
+    - cron: '30 0 * * 1-5'
 
   # Manual trigger from GitHub Actions tab
   workflow_dispatch:

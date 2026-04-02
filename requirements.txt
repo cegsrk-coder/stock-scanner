@@ -3,5 +3,7 @@ pandas
 numpy
 tabulate
 schedule
+jugaad-data
 yfinance
 pyarrow
+requests

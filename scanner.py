@@ -15,7 +15,7 @@ from volume_analysis import analyze_volume_trend, fetch_delivery_pct, calc_confi
 from nifty500 import get_tier2_stocks
 
 
-def scan_stock(symbol, stock_info, client=None):
+def scan_stock(symbol, stock_info, client=None, bhavcopy_data=None):
     """
     Scan a single stock: fetch data, detect levels, check proximity.
     Returns a result dict or None if no actionable signal.
@@ -23,7 +23,8 @@ def scan_stock(symbol, stock_info, client=None):
     scrip_code = stock_info["scrip_code"]
 
     # Fetch data
-    daily_df, weekly_df = fetch_stock_data(symbol, scrip_code, client, LOOKBACK_YEARS)
+    daily_df, weekly_df = fetch_stock_data(symbol, scrip_code, client, LOOKBACK_YEARS,
+                                           bhavcopy_data=bhavcopy_data)
 
     if daily_df is None or weekly_df is None:
         return None
@@ -128,6 +129,14 @@ def run_full_scan(stock_universe=None, client=None):
     if client is None:
         client = get_5paisa_client()
 
+    # Fetch bhavcopy once for all stocks (instant today-price patch)
+    from bhavcopy_fetcher import get_today_bhavcopy
+    bhavcopy_data = get_today_bhavcopy()
+    if bhavcopy_data:
+        print(f"  Bhavcopy: {len(bhavcopy_data)} stocks loaded for today")
+    else:
+        print(f"  Bhavcopy: not available (will use jugaad-data)")
+
     results = []
     total = len(stock_universe)
 
@@ -139,7 +148,7 @@ def run_full_scan(stock_universe=None, client=None):
     for i, (symbol, info) in enumerate(stock_universe.items(), 1):
         print(f"  [{i}/{total}] Scanning {symbol}...", end=" ")
         try:
-            result = scan_stock(symbol, info, client)
+            result = scan_stock(symbol, info, client, bhavcopy_data=bhavcopy_data)
             if result:
                 results.append(result)
                 status = []

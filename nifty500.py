@@ -33,7 +33,7 @@ def fetch_nifty500_from_nse():
             sector = parts[1].strip()
             symbol = parts[2].strip()
             stocks[symbol] = {
-                "scrip_code": 0,  # Will use yfinance symbol, not scrip code
+                "scrip_code": 0,  # Not used for jugaad-data/bhavcopy
                 "name": name,
                 "sector": sector,
             }
