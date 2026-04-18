@@ -119,8 +119,8 @@ def fetch_bhavcopy(trade_date=None):
 
 def get_today_bhavcopy():
     """
-    Get today's bhavcopy. Cached at module level so it's fetched once per scan run.
-    Tries today first, then yesterday (in case of holidays).
+    Get the most recent available bhavcopy. Cached at module level so it's fetched once per scan run.
+    Tries today and up to 4 days back, skipping weekends, to handle Mondays and post-holiday runs.
     """
     global _BHAVCOPY_CACHE
 
@@ -128,18 +128,14 @@ def get_today_bhavcopy():
     if today_str in _BHAVCOPY_CACHE:
         return _BHAVCOPY_CACHE[today_str]
 
-    # Try today
-    data = fetch_bhavcopy()
-    if data:
-        _BHAVCOPY_CACHE[today_str] = data
-        return data
-
-    # Try yesterday (today might be a holiday)
-    yesterday = datetime.now() - timedelta(days=1)
-    data = fetch_bhavcopy(yesterday)
-    if data:
-        _BHAVCOPY_CACHE[today_str] = data
-        return data
+    check_date = datetime.now()
+    for _ in range(5):
+        if check_date.weekday() < 5:  # skip Saturday (5) and Sunday (6)
+            data = fetch_bhavcopy(check_date)
+            if data:
+                _BHAVCOPY_CACHE[today_str] = data
+                return data
+        check_date -= timedelta(days=1)
 
     _BHAVCOPY_CACHE[today_str] = {}
     return {}

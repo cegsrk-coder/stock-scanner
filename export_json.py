@@ -45,7 +45,6 @@ def _serialize_zone(zone):
 def _serialize_stock(stock):
     """Convert a stock result dict to the JSON structure the dashboard needs."""
     f = stock.get("fundamentals") or {}
-    zone_key = "near_support" if stock.get("near_support") else "near_resistance"
     zones = stock.get("near_support") or stock.get("near_resistance") or []
 
     entry = {

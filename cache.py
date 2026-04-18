@@ -29,7 +29,8 @@ def get_cached_data(symbol):
         df = pd.read_parquet(path)
         if df.empty:
             return None, None
-        df["Datetime"] = pd.to_datetime(df["Datetime"])
+        df["Datetime"] = pd.to_datetime(df["Datetime"]).dt.normalize()
+        df = df.drop_duplicates(subset=["Datetime"], keep="last").sort_values("Datetime").reset_index(drop=True)
         last_date = df["Datetime"].max()
         return df, last_date
     except Exception:

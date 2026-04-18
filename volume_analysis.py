@@ -45,9 +45,11 @@ def fetch_delivery_pct(symbol):
     """
     import urllib.request
 
-    # Try today and previous 3 trading days
-    for days_back in range(4):
+    # Try up to 6 calendar days back, skipping weekends
+    for days_back in range(6):
         date = pd.Timestamp.now() - pd.Timedelta(days=days_back)
+        if date.weekday() >= 5:  # skip Saturday/Sunday
+            continue
         date_str = date.strftime("%d%m%Y")
         url = (
             f"https://archives.nseindia.com/products/content/"

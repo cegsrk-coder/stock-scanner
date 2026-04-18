@@ -52,8 +52,8 @@ def scan_stock(symbol, stock_info, client=None, bhavcopy_data=None):
         dma_200 = round(daily_df["Close"].tail(200).mean(), 2)
 
     # Check proximity to support/resistance
-    near_support = check_proximity(current_price, levels["support_zones"], PROXIMITY_PCT)
-    near_resistance = check_proximity(current_price, levels["resistance_zones"], PROXIMITY_PCT)
+    near_support = check_proximity(current_price, levels["support_zones"], PROXIMITY_PCT, direction="support")
+    near_resistance = check_proximity(current_price, levels["resistance_zones"], PROXIMITY_PCT, direction="resistance")
 
     # Check if price has broken below all support zones
     broken_below_support = False

@@ -99,7 +99,10 @@ def _fetch_jugaad_data(symbol, from_date, to_date):
                     return None
 
         df = df[standard_cols].copy()
-        df["Datetime"] = pd.to_datetime(df["Datetime"]).dt.tz_localize(None)
+        dt = pd.to_datetime(df["Datetime"])
+        if dt.dt.tz is not None:
+            dt = dt.dt.tz_convert("Asia/Kolkata")
+        df["Datetime"] = dt.dt.normalize().dt.tz_localize(None)
         df = df.sort_values("Datetime").reset_index(drop=True)
 
     # Rate limit to avoid NSE blocking

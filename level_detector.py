@@ -83,7 +83,8 @@ def cluster_levels(swing_points, cluster_pct=ZONE_CLUSTER_PCT):
         for j in range(i + 1, len(sorted_points)):
             if j in used:
                 continue
-            pct_diff = abs(sorted_points[j]["price"] - point["price"]) / point["price"] * 100
+            cluster_max = max(p["price"] for p in cluster)
+            pct_diff = abs(sorted_points[j]["price"] - cluster_max) / cluster_max * 100
             if pct_diff <= cluster_pct:
                 cluster.append(sorted_points[j])
                 used.add(j)
@@ -243,9 +244,11 @@ def backtest_zone_bounces(daily_df, zone, lookahead_days=10, bounce_pct=3.0):
     return {"wins": wins, "total": total, "win_rate": win_rate}
 
 
-def check_proximity(current_price, zones, proximity_pct):
+def check_proximity(current_price, zones, proximity_pct, direction=None):
     """
     Check if current price is within proximity_pct% of any zone.
+    direction='support': price must be at or above zone low (not broken below).
+    direction='resistance': price must be at or below zone high (not broken above).
     Returns list of zones that are 'active' (price is near them).
     """
     active = []
@@ -256,6 +259,10 @@ def check_proximity(current_price, zones, proximity_pct):
         min_dist = min(dist_to_low, dist_to_high, dist_to_center)
 
         if min_dist <= proximity_pct:
+            if direction == "support" and current_price < zone["low"]:
+                continue
+            if direction == "resistance" and current_price > zone["high"]:
+                continue
             zone_copy = zone.copy()
             zone_copy["distance_pct"] = round(min_dist, 2)
             active.append(zone_copy)
