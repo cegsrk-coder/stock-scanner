@@ -1,0 +1,1894 @@
+{
+  "scan_date": "2026-04-18 15:08",
+  "total_scanned": 60,
+  "near_support": [
+    {
+      "symbol": "HCLTECH",
+      "name": "HCL Technologies",
+      "sector": "IT",
+      "current_price": 1442.3,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1380.4,
+        "high": 1440.6,
+        "score": 3.5,
+        "touches": 6,
+        "last_touch": "2025-10-05",
+        "distance_pct": 0.12,
+        "backtest": {
+          "wins": 6,
+          "total": 6,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 23.8,
+        "roe": 23.2,
+        "de": 9.75,
+        "mcap_cr": 390236.0
+      },
+      "fund_verdict": "STRONG",
+      "week_52_high": 1780.1,
+      "week_52_low": 1297.7,
+      "dma_200": 1529.97,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1338.99,
+        "target": 1683.34,
+        "risk_pct": 7.2,
+        "reward_pct": 16.7,
+        "rr_ratio": 2.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 55.8,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 11.1
+    },
+    {
+      "symbol": "SBILIFE",
+      "name": "SBI Life Insurance",
+      "sector": "Insurance",
+      "current_price": 1970.9,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1933.5,
+        "high": 1968.2,
+        "score": 4,
+        "touches": 6,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.14,
+        "backtest": {
+          "wins": 5,
+          "total": 6,
+          "win_rate": 83.3
+        }
+      },
+      "fundamentals": {
+        "pe": 80.0,
+        "roe": 13.9,
+        "de": null,
+        "mcap_cr": 197699.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2132.0,
+      "week_52_low": 1595.3,
+      "dma_200": 1922.45,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 1875.5,
+        "target": 2101.23,
+        "risk_pct": 4.8,
+        "reward_pct": 6.6,
+        "rr_ratio": 1.4
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 62.6,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 23.5
+    },
+    {
+      "symbol": "ICICIBANK",
+      "name": "ICICI Bank",
+      "sector": "Banking",
+      "current_price": 1346.8,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1317.4,
+        "high": 1342.6,
+        "score": 4,
+        "touches": 7,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.31,
+        "backtest": {
+          "wins": 7,
+          "total": 7,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 18.4,
+        "roe": 16.8,
+        "de": null,
+        "mcap_cr": 964874.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1500.0,
+      "week_52_low": 1187.6,
+      "dma_200": 1380.28,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1277.88,
+        "target": 1364.23,
+        "risk_pct": 5.1,
+        "reward_pct": 1.3,
+        "rr_ratio": 0.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 59.0,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 13.4
+    },
+    {
+      "symbol": "GRASIM",
+      "name": "Grasim Industries",
+      "sector": "Cement",
+      "current_price": 2720.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 2583.95,
+        "high": 2706.0,
+        "score": 4,
+        "touches": 13,
+        "last_touch": "2026-01-25",
+        "distance_pct": 0.53,
+        "backtest": {
+          "wins": 9,
+          "total": 13,
+          "win_rate": 69.2
+        }
+      },
+      "fundamentals": {
+        "pe": 40.8,
+        "roe": null,
+        "de": 126.63,
+        "mcap_cr": 184497.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2979.0,
+      "week_52_low": 2502.5,
+      "dma_200": 2783.77,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 2506.43,
+        "target": 2978.4,
+        "risk_pct": 7.9,
+        "reward_pct": 9.5,
+        "rr_ratio": 1.2
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 55.9,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.7
+    },
+    {
+      "symbol": "BRITANNIA",
+      "name": "Britannia Industries",
+      "sector": "FMCG",
+      "current_price": 5735.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 5594.15,
+        "high": 5782.0,
+        "score": 4,
+        "touches": 8,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.71,
+        "backtest": {
+          "wins": 6,
+          "total": 8,
+          "win_rate": 75.0
+        }
+      },
+      "fundamentals": {
+        "pe": 57.1,
+        "roe": null,
+        "de": 58.42,
+        "mcap_cr": 138150.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 6336.0,
+      "week_52_low": 5276.5,
+      "dma_200": 5860.35,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 5426.33,
+        "target": 6244.8,
+        "risk_pct": 5.4,
+        "reward_pct": 8.9,
+        "rr_ratio": 1.6
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 53.4,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.7
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "current_price": 1846.9,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1746.9,
+        "high": 1901.0,
+        "score": 4,
+        "touches": 12,
+        "last_touch": "2026-04-01",
+        "distance_pct": 0.77,
+        "backtest": {
+          "wins": 11,
+          "total": 12,
+          "win_rate": 91.7
+        }
+      },
+      "fundamentals": {
+        "pe": 36.5,
+        "roe": 23.1,
+        "de": 117.09,
+        "mcap_cr": 1125034.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 2174.5,
+      "week_52_low": 1746.9,
+      "dma_200": 1971.88,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1694.49,
+        "target": 2051.4,
+        "risk_pct": 8.3,
+        "reward_pct": 11.1,
+        "rr_ratio": 1.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 53.0,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 5.7
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharma",
+      "sector": "Pharma",
+      "current_price": 1675.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1620.0,
+        "high": 1723.4,
+        "score": 4,
+        "touches": 12,
+        "last_touch": "2026-04-01",
+        "distance_pct": 0.92,
+        "backtest": {
+          "wins": 10,
+          "total": 12,
+          "win_rate": 83.3
+        }
+      },
+      "fundamentals": {
+        "pe": 36.8,
+        "roe": null,
+        "de": 6.67,
+        "mcap_cr": 402009.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1851.2,
+      "week_52_low": 1548.0,
+      "dma_200": 1697.51,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1571.4,
+        "target": 1834.56,
+        "risk_pct": 6.2,
+        "reward_pct": 9.5,
+        "rr_ratio": 1.5
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 65.5,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.2
+    },
+    {
+      "symbol": "DRREDDY",
+      "name": "Dr Reddy's Labs",
+      "sector": "Pharma",
+      "current_price": 1235.7,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1217.5,
+        "high": 1221.2,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2026-03-01",
+        "distance_pct": 1.17,
+        "backtest": {
+          "wins": 3,
+          "total": 3,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 18.2,
+        "roe": 16.1,
+        "de": 18.03,
+        "mcap_cr": 102884.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1379.7,
+      "week_52_low": 1129.4,
+      "dma_200": 1256.84,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1180.97,
+        "target": 1311.63,
+        "risk_pct": 4.4,
+        "reward_pct": 6.1,
+        "rr_ratio": 1.4
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 68.6,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 9.4
+    },
+    {
+      "symbol": "NESTLEIND",
+      "name": "Nestle India",
+      "sector": "FMCG",
+      "current_price": 1285.6,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1250.7,
+        "high": 1262.3,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2026-02-01",
+        "distance_pct": 1.81,
+        "backtest": {
+          "wins": 1,
+          "total": 3,
+          "win_rate": 33.3
+        }
+      },
+      "fundamentals": {
+        "pe": 75.8,
+        "roe": null,
+        "de": 10.75,
+        "mcap_cr": 247904.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2515.0,
+      "week_52_low": 1084.7,
+      "dma_200": 1409.74,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1213.18,
+        "target": 1322.97,
+        "risk_pct": 5.6,
+        "reward_pct": 2.9,
+        "rr_ratio": 0.5
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 55.1,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 18.5
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "sector": "Finance",
+      "current_price": 908.25,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 886.0,
+        "high": 887.0,
+        "score": 4,
+        "touches": 4,
+        "last_touch": "2026-02-01",
+        "distance_pct": 2.34,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 31.4,
+        "roe": null,
+        "de": 310.29,
+        "mcap_cr": 564600.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 9788.0,
+      "week_52_low": 787.9,
+      "dma_200": 961.76,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 859.42,
+        "target": 1047.9,
+        "risk_pct": 5.4,
+        "reward_pct": 15.4,
+        "rr_ratio": 2.9
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 63.3,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 15.3
+    },
+    {
+      "symbol": "NTPC",
+      "name": "NTPC",
+      "sector": "Energy",
+      "current_price": 393.6,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 385.3,
+        "high": 393.3,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-10-24",
+        "distance_pct": 0.08,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 21.8,
+        "roe": null,
+        "de": 118.13,
+        "mcap_cr": 381661.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 397.25,
+      "week_52_low": 315.55,
+      "dma_200": 345.17,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 373.74,
+        "target": 347.69,
+        "risk_pct": 5.0,
+        "reward_pct": -11.7,
+        "rr_ratio": -2.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 64.0,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 24.7
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "name": "IDFC First Bank",
+      "sector": "Banking",
+      "current_price": 68.53,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 67.3,
+        "high": 68.37,
+        "score": 3,
+        "touches": 6,
+        "last_touch": "2025-10-05",
+        "distance_pct": 0.23,
+        "backtest": {
+          "wins": 6,
+          "total": 6,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 36.1,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 58951.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 87.0,
+      "week_52_low": 58.08,
+      "dma_200": 75.17,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 65.28,
+        "target": 85.91,
+        "risk_pct": 4.7,
+        "reward_pct": 25.4,
+        "rr_ratio": 5.4
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 38.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 18.0
+    },
+    {
+      "symbol": "RELIANCE",
+      "name": "Reliance Industries",
+      "sector": "Energy",
+      "current_price": 1365.0,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1335.0,
+        "high": 1361.2,
+        "score": 4,
+        "touches": 7,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.28,
+        "backtest": {
+          "wins": 7,
+          "total": 7,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 22.2,
+        "roe": null,
+        "de": 35.65,
+        "mcap_cr": 1847182.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1611.8,
+      "week_52_low": 1267.0,
+      "dma_200": 1440.42,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1294.95,
+        "target": 1475.45,
+        "risk_pct": 5.1,
+        "reward_pct": 8.1,
+        "rr_ratio": 1.6
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 43.6,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 7.7
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "name": "IndusInd Bank",
+      "sector": "Banking",
+      "current_price": 853.9,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 851.15,
+        "high": 851.15,
+        "score": 3,
+        "touches": 2,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.32,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 17.9,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 66528.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 968.85,
+      "week_52_low": 710.6,
+      "dma_200": 831.97,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 825.62,
+        "target": 879.99,
+        "risk_pct": 3.3,
+        "reward_pct": 3.1,
+        "rr_ratio": 0.9
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 43.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 20.2
+    },
+    {
+      "symbol": "DMART",
+      "name": "Avenue Supermarts",
+      "sector": "Retail",
+      "current_price": 4628.5,
+      "day_change_pct": 8.37,
+      "zone": {
+        "low": 4562.6,
+        "high": 4612.5,
+        "score": 2.5,
+        "touches": 2,
+        "last_touch": "2025-09-10",
+        "distance_pct": 0.35,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 105.3,
+        "roe": null,
+        "de": 7.03,
+        "mcap_cr": 301835.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 4949.5,
+      "week_52_low": 3529.0,
+      "dma_200": 4112.79,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 4425.72,
+        "target": 4109.99,
+        "risk_pct": 4.4,
+        "reward_pct": -11.2,
+        "rr_ratio": -2.5
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 52.1,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 31.2
+    },
+    {
+      "symbol": "INFY",
+      "name": "Infosys",
+      "sector": "IT",
+      "current_price": 1318.7,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1307.0,
+        "high": 1307.0,
+        "score": 2.5,
+        "touches": 2,
+        "last_touch": "2025-04-06",
+        "distance_pct": 0.89,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 18.3,
+        "roe": 32.7,
+        "de": 10.53,
+        "mcap_cr": 533630.0
+      },
+      "fund_verdict": "STRONG",
+      "week_52_high": 1728.0,
+      "week_52_low": 1215.1,
+      "dma_200": 1493.37,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1267.79,
+        "target": 1550.25,
+        "risk_pct": 3.9,
+        "reward_pct": 17.6,
+        "rr_ratio": 4.5
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 59.9,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 8.5
+    },
+    {
+      "symbol": "ITC",
+      "name": "ITC",
+      "sector": "FMCG",
+      "current_price": 306.8,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 302.0,
+        "high": 302.0,
+        "score": 3.5,
+        "touches": 2,
+        "last_touch": "2026-02-01",
+        "distance_pct": 1.56,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 18.9,
+        "roe": null,
+        "de": 0.51,
+        "mcap_cr": 384404.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 444.2,
+      "week_52_low": 287.0,
+      "dma_200": 375.35,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 292.94,
+        "target": 421.1,
+        "risk_pct": 4.5,
+        "reward_pct": 37.3,
+        "rr_ratio": 8.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 47.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 6.9
+    },
+    {
+      "symbol": "TATACONSUM",
+      "name": "Tata Consumer",
+      "sector": "FMCG",
+      "current_price": 1113.2,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1028.9,
+        "high": 1086.4,
+        "score": 4,
+        "touches": 12,
+        "last_touch": "2026-02-01",
+        "distance_pct": 2.41,
+        "backtest": {
+          "wins": 10,
+          "total": 12,
+          "win_rate": 83.3
+        }
+      },
+      "fundamentals": {
+        "pe": 75.2,
+        "roe": null,
+        "de": 11.87,
+        "mcap_cr": 110173.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1220.9,
+      "week_52_low": 1007.2,
+      "dma_200": 1124.28,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 998.03,
+        "target": 1190.78,
+        "risk_pct": 10.3,
+        "reward_pct": 7.0,
+        "rr_ratio": 0.7
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 43.2,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 10.5
+    },
+    {
+      "symbol": "CANBK",
+      "name": "Canara Bank",
+      "sector": "Banking",
+      "current_price": 142.37,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 141.11,
+        "high": 141.11,
+        "score": 3,
+        "touches": 2,
+        "last_touch": "2025-12-14",
+        "distance_pct": 0.89,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 6.4,
+        "roe": 18.2,
+        "de": null,
+        "mcap_cr": 129139.0
+      },
+      "fund_verdict": "STRONG",
+      "week_52_high": 162.89,
+      "week_52_low": 90.95,
+      "dma_200": 132.85,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 136.88,
+        "target": 161.07,
+        "risk_pct": 3.9,
+        "reward_pct": 13.1,
+        "rr_ratio": 3.4
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 34.0,
+      "confidence": "LOW",
+      "near_52w_low_pct": 56.5
+    },
+    {
+      "symbol": "ADANIENT",
+      "name": "Adani Enterprises",
+      "sector": "Conglomerate",
+      "current_price": 2218.3,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 2145.0,
+        "high": 2240.0,
+        "score": 4.5,
+        "touches": 11,
+        "last_touch": "2025-12-07",
+        "distance_pct": 0.98,
+        "backtest": {
+          "wins": 11,
+          "total": 11,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.0,
+        "roe": null,
+        "de": 177.77,
+        "mcap_cr": 304230.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2695.0,
+      "week_52_low": 1753.0,
+      "dma_200": 2299.93,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 2080.65,
+        "target": 2295.95,
+        "risk_pct": 6.2,
+        "reward_pct": 3.5,
+        "rr_ratio": 0.6
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 24.0,
+      "confidence": "LOW",
+      "near_52w_low_pct": 26.5
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "name": "HDFC Life Insurance",
+      "sector": "Insurance",
+      "current_price": 616.45,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 584.3,
+        "high": 600.35,
+        "score": 3,
+        "touches": 5,
+        "last_touch": "2025-03-02",
+        "distance_pct": 2.61,
+        "backtest": {
+          "wins": 4,
+          "total": 5,
+          "win_rate": 80.0
+        }
+      },
+      "fundamentals": {
+        "pe": 69.4,
+        "roe": 11.3,
+        "de": 17.46,
+        "mcap_cr": 132986.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 820.75,
+      "week_52_low": 555.1,
+      "dma_200": 735.74,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 566.77,
+        "target": 754.13,
+        "risk_pct": 8.1,
+        "reward_pct": 22.3,
+        "rr_ratio": 2.8
+      },
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 39.3,
+      "confidence": "LOW",
+      "near_52w_low_pct": 11.1
+    },
+    {
+      "symbol": "POWERGRID",
+      "name": "Power Grid Corp",
+      "sector": "Energy",
+      "current_price": 318.1,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 308.7,
+        "high": 308.7,
+        "score": 2,
+        "touches": 2,
+        "last_touch": "2024-11-10",
+        "distance_pct": 2.96,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.4,
+        "roe": null,
+        "de": 141.19,
+        "mcap_cr": 295852.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 322.0,
+      "week_52_low": 250.0,
+      "dma_200": 284.14,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 299.44,
+        "target": 298.6,
+        "risk_pct": 5.9,
+        "reward_pct": -6.1,
+        "rr_ratio": -1.0
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 62.7,
+      "confidence": "LOW",
+      "near_52w_low_pct": 27.2
+    }
+  ],
+  "near_resistance": [
+    {
+      "symbol": "DIVISLAB",
+      "name": "Divi's Labs",
+      "sector": "Pharma",
+      "current_price": 6229.0,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 6230.0,
+        "high": 6314.5,
+        "score": 3,
+        "touches": 11,
+        "last_touch": "2025-09-18",
+        "distance_pct": 0.02,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 66.7,
+        "roe": null,
+        "de": 0.58,
+        "mcap_cr": 165360.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 7071.5,
+      "week_52_low": 5636.5,
+      "dma_200": 6318.05,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 42.2,
+      "near_52w_low_pct": 10.5
+    },
+    {
+      "symbol": "NTPC",
+      "name": "NTPC",
+      "sector": "Energy",
+      "current_price": 393.6,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 385.3,
+        "high": 393.3,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2024-10-24",
+        "distance_pct": 0.08,
+        "backtest": {
+          "wins": 4,
+          "total": 4,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 21.8,
+        "roe": null,
+        "de": 118.13,
+        "mcap_cr": 381661.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 397.25,
+      "week_52_low": 315.55,
+      "dma_200": 345.17,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 373.74,
+        "target": 347.69,
+        "risk_pct": 5.0,
+        "reward_pct": -11.7,
+        "rr_ratio": -2.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 64.0,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 24.7
+    },
+    {
+      "symbol": "NESTLEIND",
+      "name": "Nestle India",
+      "sector": "FMCG",
+      "current_price": 1285.6,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1250.7,
+        "high": 1262.3,
+        "score": 3.5,
+        "touches": 3,
+        "last_touch": "2026-02-01",
+        "distance_pct": 1.81,
+        "backtest": {
+          "wins": 1,
+          "total": 3,
+          "win_rate": 33.3
+        }
+      },
+      "fundamentals": {
+        "pe": 75.8,
+        "roe": null,
+        "de": 10.75,
+        "mcap_cr": 247904.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2515.0,
+      "week_52_low": 1084.7,
+      "dma_200": 1409.74,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1213.18,
+        "target": 1322.97,
+        "risk_pct": 5.6,
+        "reward_pct": 2.9,
+        "rr_ratio": 0.5
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 55.1,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 18.5
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra",
+      "sector": "Auto",
+      "current_price": 3200.2,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 3115.0,
+        "high": 3303.0,
+        "score": 3.5,
+        "touches": 13,
+        "last_touch": "2025-07-22",
+        "distance_pct": 0.38,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 22.9,
+        "roe": null,
+        "de": 132.29,
+        "mcap_cr": 384268.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 3839.9,
+      "week_52_low": 2665.9,
+      "dma_200": 3437.73,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 55.8,
+      "near_52w_low_pct": 20.0
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "name": "IndusInd Bank",
+      "sector": "Banking",
+      "current_price": 853.9,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 851.15,
+        "high": 851.15,
+        "score": 3,
+        "touches": 2,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.32,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 17.9,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 66528.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 968.85,
+      "week_52_low": 710.6,
+      "dma_200": 831.97,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 825.62,
+        "target": 879.99,
+        "risk_pct": 3.3,
+        "reward_pct": 3.1,
+        "rr_ratio": 0.9
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 43.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 20.2
+    },
+    {
+      "symbol": "GRASIM",
+      "name": "Grasim Industries",
+      "sector": "Cement",
+      "current_price": 2720.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 2583.95,
+        "high": 2706.0,
+        "score": 4,
+        "touches": 13,
+        "last_touch": "2026-01-25",
+        "distance_pct": 0.53,
+        "backtest": {
+          "wins": 9,
+          "total": 13,
+          "win_rate": 69.2
+        }
+      },
+      "fundamentals": {
+        "pe": 40.8,
+        "roe": null,
+        "de": 126.63,
+        "mcap_cr": 184497.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2979.0,
+      "week_52_low": 2502.5,
+      "dma_200": 2783.77,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 2506.43,
+        "target": 2978.4,
+        "risk_pct": 7.9,
+        "reward_pct": 9.5,
+        "rr_ratio": 1.2
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 55.9,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.7
+    },
+    {
+      "symbol": "BANDHANBNK",
+      "name": "Bandhan Bank",
+      "sector": "Banking",
+      "current_price": 174.47,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 173.43,
+        "high": 179.28,
+        "score": 4,
+        "touches": 8,
+        "last_touch": "2025-11-02",
+        "distance_pct": 0.6,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 27.9,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 28107.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 192.48,
+      "week_52_low": 134.25,
+      "dma_200": 162.12,
+      "is_above_200dma": true,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 32.9,
+      "near_52w_low_pct": 30.0
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "name": "Adani Ports",
+      "sector": "Infrastructure",
+      "current_price": 1573.4,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1583.9,
+        "high": 1621.4,
+        "score": 4.5,
+        "touches": 7,
+        "last_touch": "2026-03-01",
+        "distance_pct": 0.67,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 27.2,
+        "roe": 19.4,
+        "de": 81.56,
+        "mcap_cr": 362505.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1584.0,
+      "week_52_low": 1181.2,
+      "dma_200": 1437.59,
+      "is_above_200dma": true,
+      "vol_signal": "\u2191 Caution",
+      "delivery_pct": 63.2,
+      "near_52w_low_pct": 33.2
+    },
+    {
+      "symbol": "POWERGRID",
+      "name": "Power Grid Corp",
+      "sector": "Energy",
+      "current_price": 318.1,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 308.7,
+        "high": 308.7,
+        "score": 2,
+        "touches": 2,
+        "last_touch": "2024-11-10",
+        "distance_pct": 2.96,
+        "backtest": {
+          "wins": 2,
+          "total": 2,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 20.4,
+        "roe": null,
+        "de": 141.19,
+        "mcap_cr": 295852.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 322.0,
+      "week_52_low": 250.0,
+      "dma_200": 284.14,
+      "is_above_200dma": true,
+      "risk_reward": {
+        "stop_loss": 299.44,
+        "target": 298.6,
+        "risk_pct": 5.9,
+        "reward_pct": -6.1,
+        "rr_ratio": -1.0
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 62.7,
+      "confidence": "LOW",
+      "near_52w_low_pct": 27.2
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "name": "IDFC First Bank",
+      "sector": "Banking",
+      "current_price": 68.53,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 67.3,
+        "high": 68.37,
+        "score": 3,
+        "touches": 6,
+        "last_touch": "2025-10-05",
+        "distance_pct": 0.23,
+        "backtest": {
+          "wins": 6,
+          "total": 6,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 36.1,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 58951.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 87.0,
+      "week_52_low": 58.08,
+      "dma_200": 75.17,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 65.28,
+        "target": 85.91,
+        "risk_pct": 4.7,
+        "reward_pct": 25.4,
+        "rr_ratio": 5.4
+      },
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 38.5,
+      "confidence": "MEDIUM",
+      "near_52w_low_pct": 18.0
+    },
+    {
+      "symbol": "LT",
+      "name": "Larsen & Toubro",
+      "sector": "Capital Goods",
+      "current_price": 4096.1,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 4062.6,
+        "high": 4195.0,
+        "score": 4.5,
+        "touches": 7,
+        "last_touch": "2026-01-04",
+        "distance_pct": 0.82,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 32.1,
+        "roe": null,
+        "de": 111.85,
+        "mcap_cr": 563473.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 4440.0,
+      "week_52_low": 3225.1,
+      "dma_200": 3829.52,
+      "is_above_200dma": true,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 61.3,
+      "near_52w_low_pct": 27.0
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement",
+      "sector": "Cement",
+      "current_price": 11886.0,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 11787.0,
+        "high": 12448.0,
+        "score": 4.5,
+        "touches": 18,
+        "last_touch": "2025-11-30",
+        "distance_pct": 0.83,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 45.7,
+        "roe": null,
+        "de": 33.19,
+        "mcap_cr": 349655.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 13110.0,
+      "week_52_low": 10325.0,
+      "dma_200": 12106.89,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 55.2,
+      "near_52w_low_pct": 15.1
+    },
+    {
+      "symbol": "ICICIBANK",
+      "name": "ICICI Bank",
+      "sector": "Banking",
+      "current_price": 1346.8,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1317.4,
+        "high": 1342.6,
+        "score": 4,
+        "touches": 7,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.31,
+        "backtest": {
+          "wins": 7,
+          "total": 7,
+          "win_rate": 100.0
+        }
+      },
+      "fundamentals": {
+        "pe": 18.4,
+        "roe": 16.8,
+        "de": null,
+        "mcap_cr": 964874.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1500.0,
+      "week_52_low": 1187.6,
+      "dma_200": 1380.28,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1277.88,
+        "target": 1364.23,
+        "risk_pct": 5.1,
+        "reward_pct": 1.3,
+        "rr_ratio": 0.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 59.0,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 13.4
+    },
+    {
+      "symbol": "ONGC",
+      "name": "ONGC",
+      "sector": "Energy",
+      "current_price": 284.05,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 286.55,
+        "high": 286.55,
+        "score": 2,
+        "touches": 2,
+        "last_touch": "2024-06-02",
+        "distance_pct": 0.88,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 9.4,
+        "roe": null,
+        "de": 43.8,
+        "mcap_cr": 357343.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 293.0,
+      "week_52_low": 228.45,
+      "dma_200": 250.5,
+      "is_above_200dma": true,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 66.6,
+      "near_52w_low_pct": 24.3
+    },
+    {
+      "symbol": "PNB",
+      "name": "Punjab National Bank",
+      "sector": "Banking",
+      "current_price": 114.48,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 115.71,
+        "high": 117.98,
+        "score": 2.5,
+        "touches": 3,
+        "last_touch": "2025-07-20",
+        "distance_pct": 1.07,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 7.4,
+        "roe": 12.7,
+        "de": null,
+        "mcap_cr": 131593.0
+      },
+      "fund_verdict": "STRONG",
+      "week_52_high": 135.15,
+      "week_52_low": 89.45,
+      "dma_200": 115.85,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 44.6,
+      "near_52w_low_pct": 28.0
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "name": "Asian Paints",
+      "sector": "Consumer",
+      "current_price": 2464.0,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 2491.0,
+        "high": 2535.0,
+        "score": 3.5,
+        "touches": 4,
+        "last_touch": "2025-07-13",
+        "distance_pct": 1.1,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 61.4,
+        "roe": null,
+        "de": 17.61,
+        "mcap_cr": 236198.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 2985.7,
+      "week_52_low": 2115.0,
+      "dma_200": 2518.35,
+      "is_above_200dma": false,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 55.3,
+      "near_52w_low_pct": 16.5
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "name": "Bajaj Auto",
+      "sector": "Auto",
+      "current_price": 9773.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 9888.0,
+        "high": 10187.0,
+        "score": 4.5,
+        "touches": 9,
+        "last_touch": "2026-03-01",
+        "distance_pct": 1.17,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 30.8,
+        "roe": null,
+        "de": 57.26,
+        "mcap_cr": 272927.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 10187.0,
+      "week_52_low": 7612.0,
+      "dma_200": 9033.54,
+      "is_above_200dma": true,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 52.7,
+      "near_52w_low_pct": 28.4
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "name": "Federal Bank",
+      "sector": "Banking",
+      "current_price": 293.75,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 298.25,
+        "high": 302.0,
+        "score": 3.0,
+        "touches": 3,
+        "last_touch": "2026-03-01",
+        "distance_pct": 1.53,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 17.8,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 72379.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 302.0,
+      "week_52_low": 183.15,
+      "dma_200": 241.25,
+      "is_above_200dma": true,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 58.9,
+      "near_52w_low_pct": 60.4
+    },
+    {
+      "symbol": "MARUTI",
+      "name": "Maruti Suzuki",
+      "sector": "Auto",
+      "current_price": 13453.0,
+      "day_change_pct": 6.51,
+      "zone": {
+        "low": 12890.0,
+        "high": 13680.0,
+        "score": 3,
+        "touches": 16,
+        "last_touch": "2025-06-22",
+        "distance_pct": 1.59,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 28.3,
+        "roe": null,
+        "de": 0.1,
+        "mcap_cr": 422966.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 17370.0,
+      "week_52_low": 11289.0,
+      "dma_200": 14747.48,
+      "is_above_200dma": false,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 46.8,
+      "near_52w_low_pct": 19.2
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharma",
+      "sector": "Pharma",
+      "current_price": 1675.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1620.0,
+        "high": 1723.4,
+        "score": 4,
+        "touches": 12,
+        "last_touch": "2026-04-01",
+        "distance_pct": 0.92,
+        "backtest": {
+          "wins": 10,
+          "total": 12,
+          "win_rate": 83.3
+        }
+      },
+      "fundamentals": {
+        "pe": 36.8,
+        "roe": null,
+        "de": 6.67,
+        "mcap_cr": 402009.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1851.2,
+      "week_52_low": 1548.0,
+      "dma_200": 1697.51,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1571.4,
+        "target": 1834.56,
+        "risk_pct": 6.2,
+        "reward_pct": 9.5,
+        "rr_ratio": 1.5
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 65.5,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.2
+    },
+    {
+      "symbol": "TECHM",
+      "name": "Tech Mahindra",
+      "sector": "IT",
+      "current_price": 1511.4,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1539.7,
+        "high": 1566.9,
+        "score": 3,
+        "touches": 4,
+        "last_touch": "2025-09-21",
+        "distance_pct": 1.87,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 29.0,
+        "roe": null,
+        "de": 6.99,
+        "mcap_cr": 133920.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 1854.0,
+      "week_52_low": 1303.0,
+      "dma_200": 1511.81,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 50.8,
+      "near_52w_low_pct": 16.0
+    },
+    {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel",
+      "sector": "Metals",
+      "current_price": 212.12,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 216.45,
+        "high": 216.45,
+        "score": 3,
+        "touches": 2,
+        "last_touch": "2026-03-01",
+        "distance_pct": 2.04,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 28.8,
+        "roe": null,
+        "de": 99.7,
+        "mcap_cr": 264553.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 216.45,
+      "week_52_low": 137.05,
+      "dma_200": 178.03,
+      "is_above_200dma": true,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 36.4,
+      "near_52w_low_pct": 54.8
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "name": "Apollo Hospitals",
+      "sector": "Healthcare",
+      "current_price": 7699.0,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 7870.5,
+        "high": 8099.5,
+        "score": 4.5,
+        "touches": 7,
+        "last_touch": "2026-03-01",
+        "distance_pct": 2.23,
+        "backtest": null
+      },
+      "fundamentals": {
+        "pe": 61.4,
+        "roe": null,
+        "de": 83.61,
+        "mcap_cr": 110700.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 8099.5,
+      "week_52_low": 6677.5,
+      "dma_200": 7459.57,
+      "is_above_200dma": true,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 60.4,
+      "near_52w_low_pct": 15.3
+    },
+    {
+      "symbol": "BHARTIARTL",
+      "name": "Bharti Airtel",
+      "sector": "Telecom",
+      "current_price": 1846.9,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 1746.9,
+        "high": 1901.0,
+        "score": 4,
+        "touches": 12,
+        "last_touch": "2026-04-01",
+        "distance_pct": 0.77,
+        "backtest": {
+          "wins": 11,
+          "total": 12,
+          "win_rate": 91.7
+        }
+      },
+      "fundamentals": {
+        "pe": 36.5,
+        "roe": 23.1,
+        "de": 117.09,
+        "mcap_cr": 1125034.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 2174.5,
+      "week_52_low": 1746.9,
+      "dma_200": 1971.88,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 1694.49,
+        "target": 2051.4,
+        "risk_pct": 8.3,
+        "reward_pct": 11.1,
+        "rr_ratio": 1.3
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 53.0,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 5.7
+    },
+    {
+      "symbol": "BRITANNIA",
+      "name": "Britannia Industries",
+      "sector": "FMCG",
+      "current_price": 5735.5,
+      "day_change_pct": 0.0,
+      "zone": {
+        "low": 5594.15,
+        "high": 5782.0,
+        "score": 4,
+        "touches": 8,
+        "last_touch": "2026-02-01",
+        "distance_pct": 0.71,
+        "backtest": {
+          "wins": 6,
+          "total": 8,
+          "win_rate": 75.0
+        }
+      },
+      "fundamentals": {
+        "pe": 57.1,
+        "roe": null,
+        "de": 58.42,
+        "mcap_cr": 138150.0
+      },
+      "fund_verdict": "WEAK",
+      "week_52_high": 6336.0,
+      "week_52_low": 5276.5,
+      "dma_200": 5860.35,
+      "is_above_200dma": false,
+      "risk_reward": {
+        "stop_loss": 5426.33,
+        "target": 6244.8,
+        "risk_pct": 5.4,
+        "reward_pct": 8.9,
+        "rr_ratio": 1.6
+      },
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 53.4,
+      "confidence": "HIGH",
+      "near_52w_low_pct": 8.7
+    }
+  ],
+  "deep_value": [
+    {
+      "symbol": "CIPLA",
+      "name": "Cipla",
+      "sector": "Pharma",
+      "current_price": 1240.8,
+      "day_change_pct": 0.0,
+      "zone": null,
+      "fundamentals": {
+        "pe": 22.1,
+        "roe": null,
+        "de": 1.42,
+        "mcap_cr": 100230.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 1673.0,
+      "week_52_low": 1165.7,
+      "dma_200": 1455.89,
+      "is_above_200dma": false,
+      "vol_signal": "\u2192 Neutral",
+      "delivery_pct": 72.0,
+      "below_support_pct": 3.2,
+      "near_52w_low_pct": 6.4
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "sector": "Banking",
+      "current_price": 799.9,
+      "day_change_pct": 0.0,
+      "zone": null,
+      "fundamentals": {
+        "pe": 17.9,
+        "roe": 14.0,
+        "de": null,
+        "mcap_cr": 1231307.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 2037.7,
+      "week_52_low": 726.65,
+      "dma_200": 1152.77,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 62.5,
+      "below_support_pct": 14.8,
+      "near_52w_low_pct": 10.1
+    },
+    {
+      "symbol": "KOTAKBANK",
+      "name": "Kotak Mahindra Bank",
+      "sector": "Banking",
+      "current_price": 383.6,
+      "day_change_pct": 0.0,
+      "zone": null,
+      "fundamentals": {
+        "pe": 20.3,
+        "roe": null,
+        "de": null,
+        "mcap_cr": 381546.0
+      },
+      "fund_verdict": "OK",
+      "week_52_high": 2301.9,
+      "week_52_low": 345.5,
+      "dma_200": 1560.53,
+      "is_above_200dma": false,
+      "vol_signal": "\u2193 Bullish",
+      "delivery_pct": 68.3,
+      "below_support_pct": 4.2,
+      "near_52w_low_pct": 11.0
+    }
+  ],
+  "falling_knife": [],
+  "sector_strength": {
+    "Capital Goods": 100.0,
+    "Retail": 100.0,
+    "Metals": 100.0,
+    "Infrastructure": 100.0,
+    "Mining": 100.0,
+    "Healthcare": 100.0,
+    "Banking": 62.5,
+    "Energy": 60.0,
+    "Consumer": 50.0,
+    "Insurance": 50.0,
+    "Auto": 33.3,
+    "IT": 0.0,
+    "FMCG": 0.0,
+    "Telecom": 0.0,
+    "Pharma": 0.0,
+    "Finance": 0.0,
+    "Cement": 0.0,
+    "Conglomerate": 0.0
+  }
+}
